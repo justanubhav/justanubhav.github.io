@@ -158,8 +158,8 @@ h2 {
   display: inline-block;
   padding: 0.4rem 0.8rem;
   margin-top: 8px;
-  background-color: #1e90ff; /* button color */
-  color: #fff;               /* button text color */
+  background-color: #555;    /* muted gray-blue to match dark card */
+  color: #fff;               /* text remains readable */
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.95rem;
@@ -168,7 +168,9 @@ h2 {
 }
 
 .card a.read-more:hover {
-  background-color:
+  background-color: #777;    /* lighter gray-blue on hover */
+  transform: translateY(-2px);
+}
 
 /* Blog Listing */
 .blog-list {
