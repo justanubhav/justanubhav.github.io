@@ -1,0 +1,4 @@
+echo "_site/" >> .gitignore
+echo ".jekyll-cache/" >> .gitignore
+echo ".sass-cache/" >> .gitignore
+echo ".jekyll-metadata" >> .gitignore
