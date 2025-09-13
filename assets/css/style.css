@@ -256,7 +256,3 @@ footer {
     font-size: 0.95rem;
   }
 }
-
-body.blog main {
-  padding-top: 120px; /* offset for nav */
-}
