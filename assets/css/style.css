@@ -154,12 +154,34 @@ h2 {
 }
 
 /* Read More button inside card */
-.card a.read-more {
+.card {
+  display: flex;                 /* use flexbox for centering */
+  flex-direction: column;        /* stack text and button vertically */
+  justify-content: center;       /* vertical centering */
+  align-items: center;           /* horizontal centering */
+  text-align: center;            /* center multiline text */
+  
+  margin-top: 6px;
+  padding: 14px 20px;            /* more padding for vertical space */
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #fff;                   /* normal text color */
+  font-size: 0.95rem;
+  min-height: 160px;             /* ensures consistent height */
+  max-width: 360px;
+  transition: background 0.3s;
+}
+
+.card:hover {
+  background-color: #222;
+}
+
+.read-more {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  margin-top: 8px;
-  background-color: #555;    /* muted gray-blue to match dark card */
-  color: #fff;               /* text remains readable */
+  margin-top: 12px;            /* spacing from card text */
+  background-color: #555;       /* subtle accent */
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.95rem;
@@ -167,8 +189,8 @@ h2 {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.card a.read-more:hover {
-  background-color: #777;    /* lighter gray-blue on hover */
+.read-more:hover {
+  background-color: #777;
   transform: translateY(-2px);
 }
 
