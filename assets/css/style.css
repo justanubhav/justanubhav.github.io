@@ -41,15 +41,16 @@ nav a:visited {
   color: #ddd; /* prevent purple links */
 }
 
-/* Header */
+/* Header / Hero Section */
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 50vh;
-  background: #1e1e1e;
-  padding: 140px 1.5rem 2rem; /* space for fixed nav + bottom */
+  min-height: 65vh; /* taller to fully cover background under nav */
+  background-color: #1e1e1e; /* solid background to remove any lines */
+  padding: 180px 1.5rem 3rem; /* top padding to offset fixed nav */
+  box-sizing: border-box;
 }
 
 header h1 {
@@ -64,6 +65,7 @@ header p {
   max-width: 700px;
   margin-top: 10px;
   margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 /* Sections */
@@ -114,16 +116,7 @@ h2 {
 .card h3 {
   margin: 0 0 6px 0;
   font-size: 1.2rem;
-  color: #ddd; /* neutral color */
-}
-
-.card h3 a {
-  color: #ddd;
-  text-decoration: none;
-}
-
-.card h3 a:hover {
-  color: #ddd;
+  color: #ddd; /* keep title white */
 }
 
 .card p {
