@@ -43,19 +43,20 @@ nav a:visited {
 
 /* Header */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh; /* taller so it fully covers behind nav */
-  background-color: #1e1e1e;
-  padding: 120px 1.5rem 2rem;
+  height: 100vh;                   /* full viewport height */
+  display: flex;                    /* flexbox centering */
+  flex-direction: column;           /* stack heading and subtitle */
+  justify-content: center;          /* vertical centering */
+  align-items: center;              /* horizontal centering */
+  text-align: center;               /* center multiline text */
+  background-color: #1a1a1a;        /* match your dark theme */
+  color: #fff;
+  padding: 0 20px;                  /* small horizontal padding */
 }
 
 header h1 {
-  font-size: 2.3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 4rem;
+  margin: 0;
 }
 
 header p {
