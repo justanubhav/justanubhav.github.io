@@ -281,3 +281,17 @@ footer {
     font-size: 0.95rem;
   }
 }
+
+.fade-in {
+  opacity: 0;                  /* start invisible */
+  transform: translateY(20px); /* optional: slide up */
+  animation: fadeInUp 1s forwards; /* duration + forwards to keep final state */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
