@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - Anubhav Roy</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/#about' | relative_url }}">About</a>
+    <a href="{{ '/#interest' | relative_url }}">Interest</a>
+    <a href="{{ '/#contact' | relative_url }}">Contact</a>
+    <a href="{{ '/blog' | relative_url }}">Blogs</a>
+  </nav>
+
+  <!-- Page Content -->
+  <main>
+    {{ content }}
+  </main>
+
+</body>
+</html>
