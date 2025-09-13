@@ -2,7 +2,6 @@
 layout: default
 title: Blog
 permalink: /blog/
-body_class: blog
 ---
 
 <h1>Blog</h1>
