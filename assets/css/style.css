@@ -275,7 +275,6 @@ footer {
 .blog-hero {
   padding: 120px 20px 60px; /* top padding pushes title below nav */
   text-align: center;
-  background-color: #1e1e1e; /* optional, match your site aesthetic */
   color: #fff; /* title color */
 }
 
