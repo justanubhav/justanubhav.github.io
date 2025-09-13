@@ -1,0 +1,7 @@
+title: Anubhav Roy
+description: Personal landing page and blog
+plugins:
+  - jekyll-feed
+baseurl: ""
+url: ""
+markdown: kramdown
