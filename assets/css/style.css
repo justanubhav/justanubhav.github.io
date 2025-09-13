@@ -136,23 +136,6 @@ h2 {
   margin: 4px 0;
 }
 
-/* Card text */
-.card {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 6px 14px;
-  border-radius: 6px;
-  background-color: #1a1a1a;
-  color: #fff; /* card text color, not blue */
-  text-decoration: none;
-  transition: background 0.3s;
-  font-size: 0.95rem;
-}
-
-.card:hover {
-  background-color: #222; /* slightly lighter on hover */
-}
-
 /* Read More button inside card */
 .card {
   display: flex;                 /* use flexbox for centering */
