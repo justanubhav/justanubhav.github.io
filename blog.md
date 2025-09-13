@@ -4,10 +4,6 @@ title: Blog
 permalink: /blog/
 ---
 
-<section class="blog-hero">
-  <h1>Blog</h1>
-</section>
-
 <div class="blog-list">
   {% for post in site.posts %}
     <div class="post-card">
