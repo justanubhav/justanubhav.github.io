@@ -1,18 +1,19 @@
 ---
-layout: default
+layout: blog
 title: Blog
+permalink: /blog/
 ---
 
-<section>
-  <h1>Blogs</h1>
-  <div class="cards">
-    {% for post in site.posts %}
-    <div class="card">
-      <h3>{{ post.title }}</h3>
+<h1>Blog</h1>
+
+<div class="blog-list">
+  {% for post in site.posts %}
+    <div class="post-card">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
       <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-      <p class="post-excerpt">{{ post.excerpt }}</p>
-      <a href="{{ post.url }}" class="read-more">Read More</a>
+      <p>{{ post.excerpt }}</p>
+      <a class="read-more" href="{{ post.url | relative_url }}">Read more</a>
     </div>
-    {% endfor %}
-  </div>
-</section>
+    <hr class="post-divider">
+  {% endfor %}
+</div>
