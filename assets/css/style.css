@@ -136,36 +136,39 @@ h2 {
   margin: 4px 0;
 }
 
+/* Card text */
 .card {
   display: inline-block;
   margin-top: 6px;
   padding: 6px 14px;
   border-radius: 6px;
   background-color: #1a1a1a;
-  color: #1e90ff; /* only Read More is blue */
+  color: #fff; /* card text color, not blue */
   text-decoration: none;
   transition: background 0.3s;
   font-size: 0.95rem;
 }
 
 .card:hover {
-  background-color: #187bcd;
+  background-color: #222; /* slightly lighter on hover */
 }
 
-.read-more {
+/* Read More button inside card */
+.card a.read-more {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #0077cc; /* button color */
-  color: #fff;               /* text color */
-  text-decoration: none;     /* remove underline */
-  border-radius: 6px;        /* rounded corners */
-  transition: background-color 0.3s ease;
+  padding: 0.4rem 0.8rem;
+  margin-top: 8px;
+  background-color: #1e90ff; /* button color */
+  color: #fff;               /* button text color */
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
   font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.read-more:hover {
-  background-color: #005fa3; /* darker on hover */
-}
+.card a.read-more:hover {
+  background-color:
 
 /* Blog Listing */
 .blog-list {
