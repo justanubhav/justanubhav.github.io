@@ -284,15 +284,12 @@ footer {
 }
 
 .fade-in {
-  opacity: 0;                  /* start invisible */
-  transform: translateY(20px); /* optional: slide up */
-  animation: fadeInUp 1s forwards; /* duration + forwards to keep final state */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-
