@@ -271,15 +271,3 @@ footer {
     font-size: 0.95rem;
   }
 }
-
-.blog-hero {
-  padding: 120px 20px 60px; /* top padding pushes title below nav */
-  text-align: center;
-  color: #fff; /* title color */
-}
-
-.blog-hero h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
