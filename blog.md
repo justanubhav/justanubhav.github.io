@@ -4,7 +4,9 @@ title: Blog
 permalink: /blog/
 ---
 
-<h1>Blog</h1>
+<section class="blog-hero">
+  <h1>Blog</h1>
+</section>
 
 <div class="blog-list">
   {% for post in site.posts %}
