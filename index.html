@@ -71,3 +71,20 @@ title: Anubhav Roy
     });
   });
 </script>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  }, { threshold: 0.2 }); // 20% visible triggers animation
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+
