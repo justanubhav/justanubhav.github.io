@@ -114,6 +114,15 @@ h2 {
 .card h3 {
   margin: 0 0 6px 0;
   font-size: 1.2rem;
+  color: #ddd; /* neutral color */
+}
+
+.card h3 a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.card h3 a:hover {
   color: #ddd;
 }
 
