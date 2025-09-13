@@ -20,7 +20,7 @@ nav {
   padding: 1rem 0;
   z-index: 1000;
   flex-wrap: wrap;
-  border-bottom: none; /* remove black line */
+  border-bottom: none;
 }
 
 nav a {
@@ -38,19 +38,18 @@ nav a:focus {
 }
 
 nav a:visited {
-  color: #ddd; /* prevent purple links */
+  color: #ddd; /* keep links gray after visiting */
 }
 
-/* Header / Hero Section */
+/* Header */
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 65vh; /* taller to fully cover background under nav */
-  background-color: #1e1e1e; /* solid background to remove any lines */
-  padding: 180px 1.5rem 3rem; /* top padding to offset fixed nav */
-  box-sizing: border-box;
+  min-height: 60vh; /* taller so it fully covers behind nav */
+  background-color: #1e1e1e;
+  padding: 120px 1.5rem 2rem;
 }
 
 header h1 {
@@ -65,7 +64,6 @@ header p {
   max-width: 700px;
   margin-top: 10px;
   margin-bottom: 2rem;
-  line-height: 1.5;
 }
 
 /* Sections */
@@ -92,7 +90,7 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.card {
+.card, .post-card {
   background-color: #1e1e1e;
   border-radius: 12px;
   padding: 1.8rem;
@@ -108,18 +106,28 @@ h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card:hover, .post-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.7);
 }
 
-.card h3 {
+.card h3, .post-card h3 {
   margin: 0 0 6px 0;
   font-size: 1.2rem;
-  color: #ddd; /* keep title white */
+  color: #ddd; /* ensure title is gray */
 }
 
-.card p {
+.card h3 a, .post-card h3 a {
+  color: #ddd; /* override default link color */
+  text-decoration: none;
+}
+
+.card h3 a:hover, .post-card h3 a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.card p, .post-card p {
   margin: 4px 0;
 }
 
@@ -129,7 +137,7 @@ h2 {
   padding: 6px 14px;
   border-radius: 6px;
   background-color: #1a1a1a;
-  color: #fff;
+  color: #1e90ff; /* only Read More is blue */
   text-decoration: none;
   transition: background 0.3s;
   font-size: 0.95rem;
@@ -139,9 +147,12 @@ h2 {
   background-color: #187bcd;
 }
 
-/* Blog Section */
+/* Blog Listing */
 .blog-list {
   margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-divider {
@@ -150,11 +161,10 @@ h2 {
   margin: 2rem 0;
 }
 
-/* Blog post page */
+/* Post Page */
 .post-card {
   max-width: 800px;
   margin: 140px auto 4rem auto; /* space from nav + bottom */
-  background-color: #1e1e1e;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
@@ -189,7 +199,6 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
@@ -231,7 +240,7 @@ footer {
   h2 {
     font-size: 1.3rem;
   }
-  .card {
+  .card, .post-card {
     padding: 1.5rem;
     font-size: 0.9rem;
     min-height: 140px;
