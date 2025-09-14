@@ -3,5 +3,5 @@ description: Personal landing page and blog
 plugins:
   - jekyll-feed
 url: "https://justanubhav.github.io"   # your GitHub Pages domain
-baseurl: "/personal-landing-page"      # the repo name, with a leading slash
+baseurl: ""      # the repo name, with a leading slash
 markdown: kramdown

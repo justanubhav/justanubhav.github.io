@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} - Anubhav Roy</title>
+  <title>{{ page.title }} - {{ site.title }}</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body id="top">
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
   <!-- Navigation -->
   <nav>
-    <a href="/#top">Home</a>
-    <a href="/#about">About</a>
-    <a href="/#interest">Interest</a>
-    <a href="/#contact">Contact</a>
-    <a href="/blog/">Blogs</a>
+    <a href="{{ '/#top' | relative_url }}">Home</a>
+    <a href="{{ '/#about' | relative_url }}">About</a>
+    <a href="{{ '/#interest' | relative_url }}">Interest</a>
+    <a href="{{ '/#contact' | relative_url }}">Contact</a>
+    <a href="{{ '/blog/' | relative_url }}">Blogs</a>
+    <button id="theme-toggle">☀️</button>
   </nav>
 
   <!-- Page Content -->
@@ -26,24 +30,7 @@
     {{ content }}
   </main>
 
-  <!-- Smooth Scroll Script -->
-  <script>
-    document.querySelectorAll('nav a[href*="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const url = new URL(this.href, window.location.origin);
-        const targetId = url.hash;
-        const target = document.querySelector(targetId);
-
-        if (url.pathname === window.location.pathname && target) {
-          // Smooth scroll if we’re already on the same page
-          e.preventDefault();
-          window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
 </body>
 </html>
