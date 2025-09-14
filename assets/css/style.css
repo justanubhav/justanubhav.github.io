@@ -293,3 +293,7 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+section {
+  scroll-margin-top: 70px; /* matches navbar height */
+}
