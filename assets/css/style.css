@@ -447,12 +447,12 @@ body.light-mode #blog-search:focus {
     display: none;
   }
 
-  /* Show mobile toggle at bottom-left */
+  /* Show mobile toggle at bottom-right */
   #mobile-theme-toggle {
     display: block;
     position: fixed;
     bottom: 1rem;   /* distance from bottom */
-    left: 1rem;     /* distance from left */
+    right: 1rem;    /* distance from right */
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
