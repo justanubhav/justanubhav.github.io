@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blurbs
-permalink: /Blurbs/
+permalink: /blurbs/
 ---
 
 <h1 class="blurb-title">Posts</h1>
