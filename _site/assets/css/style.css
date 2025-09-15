@@ -343,22 +343,25 @@ body.light-mode .post-card .post-date {
 }
 
 /* ===========================
-   Hero Quote
+   Hero Section Blog Advertise
    =========================== */
-.hero-quote {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: 600; /* slightly bolder than normal */
-  color: #bbb;       /* slightly lighter than the main hero text */
-  text-align: center;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+.hero-feature {
+  margin-top: 1.5rem;
+  padding: 1.5rem 2.5rem;
+  border-radius: 12px;
+  background-color: #222;  /* same style as cards */
+  color: #e0e0e0;
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
 }
 
-/* Outline animation */
-@keyframes glow-outline {
-  0% { opacity: 0.3; }
-  50% { opacity: 0.6; }
-  100% { opacity: 0.3; }
+.hero-feature:hover {
+  transform: scale(1.05);
+  background-color: #333;
+}
+
+.hero-feature p {
+  margin: 0;
 }

@@ -46,12 +46,18 @@ if(progressBar) {
   });
 }
 
-// Quotes
-const quotes = [
-  " “And God said “Love Your Enemy,” and I obeyed him and loved myself.” ",
-  "“I desire the things which will destroy me in the end.”",
-  "“Eurydice, dying now a second time, uttered no complaint against her husband. What was there to complain of, but that she had been loved?”"
-];
+// Hero section blog advertise
+document.addEventListener('DOMContentLoaded', () => {
+  const blogs = [
+    "/2025/09/13/my-first-post.html",
+    // "/blog/history-reflections.html",
+    // "/blog/film-tv.html",
+    // add more blog URLs as needed
+  ];
 
-const quoteDisplay = document.getElementById('quote-display');
-quoteDisplay.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+  const featuredBlog = document.getElementById('featured-blog');
+  featuredBlog.addEventListener('click', () => {
+    const randomBlog = blogs[Math.floor(Math.random() * blogs.length)];
+    window.location.href = randomBlog;
+  });
+});
