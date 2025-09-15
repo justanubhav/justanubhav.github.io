@@ -13,7 +13,10 @@
 </head>
 <body id="top">
   <!-- Scroll Progress Bar -->
-  <div id="progress-bar"></div>
+  {% if page.scrollbar %}
+  <div id="scroll-progress"></div>
+  {% endif %}
+
 
   <!-- Navigation -->
   <nav>

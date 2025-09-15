@@ -34,3 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.textContent = isDark ? '🌙' : '☀️';
   });
 });
+
+// Scroll Progress Bar only on blog posts
+const progressBar = document.getElementById('scroll-progress');
+if(progressBar) {
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+}
