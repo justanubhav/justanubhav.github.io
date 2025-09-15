@@ -47,23 +47,26 @@ document.addEventListener('DOMContentLoaded', () => {
   toggle && toggle.addEventListener('click', handleToggle);
   mobileToggle && mobileToggle.addEventListener('click', handleToggle);
 
-  // --------------------------
-  // Hero section featured blog click
-  // --------------------------
-  const blogs = [
-    "/2025/09/13/my-first-post.html",
-    // Add more blog URLs here as needed
-  ];
-  const featuredBlog = document.getElementById('featured-blog');
-  if(featuredBlog){
-    featuredBlog.addEventListener('click', () => {
-      const randomBlog = blogs[Math.floor(Math.random() * blogs.length)];
-      window.location.href = randomBlog;
-    });
-  }
+// --------------------------
+// Hero section featured blurb click
+// --------------------------
+const blurbs = [
+  "/2025/09/13/my-first-post.html",
+  // Add more blurb URLs here as needed
+];
+
+const featuredBlurb = document.getElementById('featured-blurb');
+
+if(featuredBlurb){
+  featuredBlurb.style.cursor = "pointer"; // show pointer
+  featuredBlurb.addEventListener('click', () => {
+    const randomBlurb = blurbs[Math.floor(Math.random() * blurbs.length)];
+    window.location.href = randomBlurb;
+  });
+}
 
   // --------------------------
-  // Scroll Progress Bar (only on blog pages)
+  // Scroll Progress Bar (only on blurb pages)
   // --------------------------
   const progressBar = document.getElementById('scroll-progress');
   if(progressBar) {
@@ -77,9 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Blog search
+// Blurb search
 (function(){
-  const searchInput = document.getElementById('blog-search');
+  const searchInput = document.getElementById('blurb-search');
   const posts = Array.from(document.querySelectorAll('.post-card'));
 
   function filterPosts(){
@@ -88,7 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     posts.forEach(post => {
       const title = (post.dataset.title || '').toLowerCase();
       const excerpt = (post.dataset.excerpt || '').toLowerCase();
-      const show = q === '' || title.includes(q) || excerpt.includes(q);
+      const tags = (post.dataset.tags || '').toLowerCase();
+      const show = q === '' || title.includes(q) || excerpt.includes(q) || tags.includes(q);
       post.style.display = show ? '' : 'none';
       const hr = post.nextElementSibling;
       if(hr && hr.classList.contains('post-divider')) hr.style.display = show ? '' : 'none';

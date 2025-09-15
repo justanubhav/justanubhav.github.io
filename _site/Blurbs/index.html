@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Anubhav Roy</title>
+  <title>Blurbs - Anubhav Roy</title>
 
   <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
 
@@ -22,9 +22,9 @@
   <nav>
     <a href="/#top">Home</a>
     <a href="/#about">About</a>
-    <a href="/#interest">Interest</a>
+    <a href="/#interests">Interests</a>
     <a href="/#contact">Contact</a>
-    <a href="/blog/">Blogs</a>
+    <a href="/blurbs/">Blurbs</a>
     <button id="theme-toggle">☀️</button>
   </nav>
 
@@ -32,11 +32,11 @@
 
   <!-- Page Content -->
   <main>
-    <h1 class="blog-title">Posts</h1>
+    <h1 class="blurb-title">Posts</h1>
 
-<p><input type="text" id="blog-search" placeholder="Search posts..." /></p>
+<p><input type="text" id="blurb-search" placeholder="Search posts..." /></p>
 
-<div class="blog-list">
+<div class="blurb-list">
   
     <div class="post-card" data-title="what is this site, and why did i create it?" data-excerpt="why, hello there, inquisitive speech bubble. i’m anubhav. you might see my name in the front page. i made this site mainly because i figure i could use this page to articulate some of the things i think and just because i think it is cool to have an introduction page of yourself even if it is entirely pointless because you have zero things to actually introduce about yourself.
 
@@ -54,13 +54,34 @@
 
 <script>
 (function(){
-  const searchInput = document.getElementById('blog-search');
+  const searchInput = document.getElementById('blurb-search');
   const posts = Array.from(document.querySelectorAll('.post-card'));
 
   function filterPosts(){
     const q = (searchInput.value || '').toLowerCase().trim();
     posts.forEach(post => {
+      const title = post.dataset.title || '';
+      const excerpt = post.dataset.excerpt || '';
+      const tags = post.dataset.tags || '';
+      const match = q === '' || title.includes(q) || excerpt.includes(q) || tags.includes(q);
+      post.style.display = match ? '' : 'none';
+      const hr = post.nextElementSibling;
+      if(hr && hr.classList.contains('post-divider')) hr.style.display = match ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterPosts);
+
+  document.addEventListener('keydown', e => {
+    if(e.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+  });
+})();
 </script>
+
 
   </main>
 

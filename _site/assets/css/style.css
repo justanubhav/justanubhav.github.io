@@ -148,9 +148,9 @@ h2 {
 }
 
 /* ===========================
-   Blog Listing
+   blurb Listing
    =========================== */
-.blog-list {
+.blurb-list {
   margin-top: 2rem;
   max-width: 800px;
   margin-left: auto;
@@ -325,7 +325,7 @@ body.light-mode .contact a:hover {
   background-color: #ccc;
 }
 
-/* Blog post date darker for readability */
+/* blurb post date darker for readability */
 body.light-mode .post-card .post-date {
   color: #444;
 }
@@ -343,7 +343,7 @@ body.light-mode .post-card .post-date {
 }
 
 /* ===========================
-   Hero Section Blog Advertise
+   Hero Section blurb Advertise
    =========================== */
 .hero-feature {
   margin-top: 1.5rem;
@@ -366,7 +366,7 @@ body.light-mode .post-card .post-date {
   margin: 0;
 }
 
-/* Light Mode Featured Blog */
+/* Light Mode Featured blurb */
 body.light-mode .hero-feature {
   margin-top: 1.5rem;
   padding: 1.5rem 2.5rem;
@@ -390,19 +390,19 @@ body.light-mode .hero-feature p {
 }
 
 /* ===========================
-   Blog search (fits dark + light theme)
+   blurb search (fits dark + light theme)
    =========================== */
 
-/* Blog page title */
-.blog-title {
+/* blurb page title */
+.blurb-title {
   margin-top: 8rem;   /* clears navbar, pushes title down */
   margin-bottom: 1rem;
   font-size: 2.2rem;
   color: #fff;
 }
 
-/* Blog search bar */
-#blog-search {
+/* blurb search bar */
+#blurb-search {
   display: block;
   margin: 1rem auto 1.5rem auto; /* spacing from title & posts */
   width: 60%; /* roughly same width as posts */
@@ -417,23 +417,23 @@ body.light-mode .hero-feature p {
   text-align: left;
 }
 
-#blog-search:focus {
+#blurb-search:focus {
   border-bottom-color: #ff9800; /* accent color */
 }
 
 /* Light mode overrides */
-body.light-mode .blog-title {
+body.light-mode .blurb-title {
   color: #121212;
 }
 
-body.light-mode #blog-search {
+body.light-mode #blurb-search {
   background-color: #fff;
   color: #121212;
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-body.light-mode #blog-search:focus {
+body.light-mode #blurb-search:focus {
   border: 1px solid #ff9800;
   box-shadow: 0 0 6px rgba(255,152,0,0.3);
 }
@@ -477,16 +477,16 @@ body.light-mode #blog-search:focus {
 }
 
 /* ===========================
-   Blog Search Bar
+   blurb Search Bar
    =========================== */
-.blog-title {
+.blurb-title {
   margin-top: 8rem;   /* clears navbar, pushes title down */
   margin-bottom: 1rem;
   font-size: 2.2rem;
   color: #fff;
 }
 
-#blog-search {
+#blurb-search {
   width: 65%;               /* slightly wider */
   max-width: 480px;
   padding: 0.6rem 1rem;
@@ -501,7 +501,7 @@ body.light-mode #blog-search:focus {
   transition: all 0.3s ease;
 }
 
-#blog-search:focus {
+#blurb-search:focus {
   outline: none;
   border: 2px solid #888;  /* gray embolden on focus */
   box-shadow: 0 0 8px rgba(136,136,136,0.4);
@@ -509,24 +509,24 @@ body.light-mode #blog-search:focus {
 }
 
 /* Light mode overrides */
-body.light-mode .blog-title {
+body.light-mode .blurb-title {
   color: #121212;
 }
 
-body.light-mode #blog-search {
+body.light-mode #blurb-search {
   background-color: #fff;
   color: #121212;
   border: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-body.light-mode #blog-search:focus {
+body.light-mode #blurb-search:focus {
   border: 2px solid #888;
   box-shadow: 0 0 8px rgba(136,136,136,0.3);
   transform: scale(1.02);
 }
 
 /* Optional: subtle hover effect */
-#blog-search:hover {
+#blurb-search:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
