@@ -72,10 +72,11 @@ header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* centers entire content block */
+  align-items: center;     /* horizontal centering */
   background-color: #1a1a1a;
   padding: 0 20px;
+  gap: 1rem;               /* uniform spacing between elements */
 }
 
 header h1 {
@@ -339,4 +340,25 @@ body.light-mode .post-card .post-date {
   background-color: #ff9800; /* accent color */
   z-index: 2000;
   transition: width 0.1s ease-out;
+}
+
+/* ===========================
+   Hero Quote
+   =========================== */
+.hero-quote {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600; /* slightly bolder than normal */
+  color: #bbb;       /* slightly lighter than the main hero text */
+  text-align: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Outline animation */
+@keyframes glow-outline {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
 }

@@ -45,3 +45,13 @@ if(progressBar) {
     progressBar.style.width = scrollPercent + '%';
   });
 }
+
+// Quotes
+const quotes = [
+  " “And God said “Love Your Enemy,” and I obeyed him and loved myself.” ",
+  "“I desire the things which will destroy me in the end.”",
+  "“Eurydice, dying now a second time, uttered no complaint against her husband. What was there to complain of, but that she had been loved?”"
+];
+
+const quoteDisplay = document.getElementById('quote-display');
+quoteDisplay.textContent = quotes[Math.floor(Math.random() * quotes.length)];
