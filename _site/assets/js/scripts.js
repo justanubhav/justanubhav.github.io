@@ -76,3 +76,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+// Blog search
+(function(){
+  const searchInput = document.getElementById('blog-search');
+  const posts = Array.from(document.querySelectorAll('.post-card'));
+
+  function filterPosts(){
+    const q = (searchInput.value || '').toLowerCase().trim();
+
+    posts.forEach(post => {
+      const title = (post.dataset.title || '').toLowerCase();
+      const excerpt = (post.dataset.excerpt || '').toLowerCase();
+      const show = q === '' || title.includes(q) || excerpt.includes(q);
+      post.style.display = show ? '' : 'none';
+      const hr = post.nextElementSibling;
+      if(hr && hr.classList.contains('post-divider')) hr.style.display = show ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterPosts);
+
+  // Focus search with "/"
+  document.addEventListener('keydown', e => {
+    if(e.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+  });
+})();
