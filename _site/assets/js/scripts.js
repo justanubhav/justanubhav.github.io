@@ -50,8 +50,8 @@ if(progressBar) {
 document.addEventListener('DOMContentLoaded', () => {
   const blogs = [
     "/2025/09/13/my-first-post.html",
-    "/blog/history-reflections.html",
-    "/blog/film-tv.html",
+    // "/blog/history-reflections.html",
+    // "/blog/film-tv.html",
     // add more blog URLs as needed
   ];
 

@@ -365,3 +365,26 @@ body.light-mode .post-card .post-date {
 .hero-feature p {
   margin: 0;
 }
+
+/* Light Mode Featured Blog */
+body.light-mode .hero-feature {
+  margin-top: 1.5rem;
+  padding: 1.5rem 2.5rem;
+  border-radius: 12px;
+  background-color: #fff;  /* card-like in light mode */
+  color: #121212;          /* dark text */
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: 1px solid #ccc;  /* subtle outline like gray */
+}
+
+body.light-mode .hero-feature:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;  /* slightly darker on hover */
+}
+
+body.light-mode .hero-feature p {
+  margin: 0;
+}
