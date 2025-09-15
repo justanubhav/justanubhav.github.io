@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // --------------------------
   // Fade-in on scroll
   // --------------------------
@@ -15,49 +16,63 @@ document.addEventListener('DOMContentLoaded', () => {
   faders.forEach(fader => observer.observe(fader));
 
   // --------------------------
-  // Dark/Light Mode Toggle
+  // Dark/Light Mode Toggle (Desktop + Mobile)
   // --------------------------
   const toggle = document.getElementById('theme-toggle');
+  const mobileToggle = document.getElementById('mobile-theme-toggle');
   const storedTheme = localStorage.getItem('theme') || 'dark';
 
-  if(storedTheme === 'dark') {
-    document.body.classList.remove('light-mode');
-    toggle.textContent = '🌙';
-  } else {
-    document.body.classList.add('light-mode');
-    toggle.textContent = '☀️';
+  // Apply stored theme
+  let isDark = storedTheme === 'dark';
+  function applyTheme(isDarkMode) {
+    if(isDarkMode) {
+      document.body.classList.remove('light-mode');
+      toggle && (toggle.textContent = '🌙');
+      mobileToggle && (mobileToggle.textContent = '🌙');
+    } else {
+      document.body.classList.add('light-mode');
+      toggle && (toggle.textContent = '☀️');
+      mobileToggle && (mobileToggle.textContent = '☀️');
+    }
   }
+  applyTheme(isDark);
 
-  toggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('light-mode') ? false : true;
+  // Theme toggle handler
+  const handleToggle = () => {
+    isDark = !isDark;
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    toggle.textContent = isDark ? '🌙' : '☀️';
-  });
-});
+    applyTheme(isDark);
+  };
 
-// Scroll Progress Bar only on blog posts
-const progressBar = document.getElementById('scroll-progress');
-if(progressBar) {
-  window.addEventListener('scroll', () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercent = (scrollTop / scrollHeight) * 100;
-    progressBar.style.width = scrollPercent + '%';
-  });
-}
+  toggle && toggle.addEventListener('click', handleToggle);
+  mobileToggle && mobileToggle.addEventListener('click', handleToggle);
 
-// Hero section blog advertise
-document.addEventListener('DOMContentLoaded', () => {
+  // --------------------------
+  // Hero section featured blog click
+  // --------------------------
   const blogs = [
     "/2025/09/13/my-first-post.html",
-    // "/blog/history-reflections.html",
-    // "/blog/film-tv.html",
-    // add more blog URLs as needed
+    // Add more blog URLs here as needed
   ];
-
   const featuredBlog = document.getElementById('featured-blog');
-  featuredBlog.addEventListener('click', () => {
-    const randomBlog = blogs[Math.floor(Math.random() * blogs.length)];
-    window.location.href = randomBlog;
-  });
+  if(featuredBlog){
+    featuredBlog.addEventListener('click', () => {
+      const randomBlog = blogs[Math.floor(Math.random() * blogs.length)];
+      window.location.href = randomBlog;
+    });
+  }
+
+  // --------------------------
+  // Scroll Progress Bar (only on blog pages)
+  // --------------------------
+  const progressBar = document.getElementById('scroll-progress');
+  if(progressBar) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      progressBar.style.width = scrollPercent + '%';
+    });
+  }
+
 });

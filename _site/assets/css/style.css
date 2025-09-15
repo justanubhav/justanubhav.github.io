@@ -439,3 +439,39 @@ body.light-mode #blog-search:focus {
   border: 1px solid #ff9800;
   box-shadow: 0 0 6px rgba(255,152,0,0.3);
 }
+
+/* Hide desktop toggle on mobile */
+@media (max-width: 600px) {
+  #theme-toggle {
+    display: none;
+  }
+
+#mobile-theme-toggle {
+  display: block;
+  position: fixed;
+  bottom: 1rem;  /* distance from bottom of viewport */
+  left: 1rem;    /* distance from left of viewport */
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #222;
+  color: #ddd;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  transition: background 0.3s, color 0.3s;
+}
+
+#mobile-theme-toggle:hover {
+  background-color: #444;
+}
+
+/* Hide mobile button on larger screens */
+@media (min-width: 601px) {
+  #mobile-theme-toggle {
+    display: none;
+  }
+}
+}
