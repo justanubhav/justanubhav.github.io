@@ -168,7 +168,7 @@ h2 {
    =========================== */
 .post-card {
   max-width: 800px;
-  margin: 140px auto 4rem auto;
+  margin: 50px auto 4rem auto;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
@@ -387,4 +387,55 @@ body.light-mode .hero-feature:hover {
 
 body.light-mode .hero-feature p {
   margin: 0;
+}
+
+/* ===========================
+   Blog search (fits dark + light theme)
+   =========================== */
+
+/* Blog page title */
+.blog-title {
+  margin-top: 8rem;   /* clears navbar, pushes title down */
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+/* Blog search bar */
+#blog-search {
+  width: 60%;
+  max-width: 480px;
+  padding: 0.6rem 1rem;
+  margin: 0 auto 2.5rem;  /* gap below title, above first post */
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+#blog-search:focus {
+  outline: none;
+  border: 1px solid #ff9800;
+  box-shadow: 0 0 6px rgba(255,152,0,0.5);
+}
+
+/* Light mode overrides */
+body.light-mode .blog-title {
+  color: #121212;
+}
+
+body.light-mode #blog-search {
+  background-color: #fff;
+  color: #121212;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+body.light-mode #blog-search:focus {
+  border: 1px solid #ff9800;
+  box-shadow: 0 0 6px rgba(255,152,0,0.3);
 }

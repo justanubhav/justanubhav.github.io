@@ -28,12 +28,38 @@
 
   <!-- Page Content -->
   <main>
-    <div class="blog-list">
+    <style>
+  h1 {
+    margin-top: 5rem;   /* clears navbar */
+    margin-bottom: 1rem; /* keep title → search spacing */
+  }
+
+  #blog-search {
+    display: block;
+    margin: 0 auto 0.5rem auto; /* bottom margin before posts */
+    padding: 0.4rem;
+    width: 60%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .blog-list {
+    margin-top: 0.4rem !important; /* ~1/5 of the old 2rem gap */
+  }
+</style>
+
+<h1>Blog</h1>
+
+<p><input type="text" id="blog-search" placeholder="Search posts..." /></p>
+
+<div class="blog-list">
   
-    <div class="post-card">
+    <div class="post-card" data-title="what is this site, and why did i create it?" data-excerpt="why, hello there, inquisitive speech bubble. i’m anubhav. you might see my name in the front page. i made this site mainly because i figure i could use this page to articulate some of the things i think and just because i think it is cool to have an introduction page of yourself even if it is entirely pointless because you have zero things to actually introduce about yourself.
+
+">
       <h2><a href="/2025/09/13/my-first-post.html">What is this site, and why did I create it?</a></h2>
       <p class="post-date">September 13, 2025</p>
-      <p><p>Why, hello there, inquisitive speech bubble. I’m Anubhav. You might see my name in the front page. I made this site mainly because I figure I could use this page to articulate some of the things I think and just because I think it is cool to have an introduction page of yourself even if it is entirely pointless because you have zero things to actually introduce about yourself.</p>
+      <p class="post-excerpt">Why, hello there, inquisitive speech bubble. I’m Anubhav. You might see my name in the front page. I made this site mainly because I figure I could use this page to articulate some of the things I think and just because I think it is cool to have an introduction page of yourself even if it is entirely pointless because you have zero things to actually introduce about yourself.
 
 </p>
       <a class="read-more" href="/2025/09/13/my-first-post.html">Read more</a>
@@ -41,6 +67,36 @@
     <hr class="post-divider" />
   
 </div>
+
+<script>
+(function(){
+  const searchInput = document.getElementById('blog-search');
+  const posts = Array.from(document.querySelectorAll('.post-card'));
+
+  function filterPosts(){
+    const q = (searchInput.value || '').toLowerCase().trim();
+    posts.forEach(post => {
+      const title = (post.dataset.title || '').toLowerCase();
+      const excerpt = (post.dataset.excerpt || '').toLowerCase();
+      const match = q === '' || title.includes(q) || excerpt.includes(q);
+      post.style.display = match ? '' : 'none';
+      const hr = post.nextElementSibling;
+      if (hr && hr.classList.contains('post-divider')) hr.style.display = match ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterPosts);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) {
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+  });
+})();
+</script>
+
 
   </main>
 
