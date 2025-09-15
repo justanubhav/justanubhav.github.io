@@ -272,12 +272,12 @@ body.light-mode {
 }
 
 body.light-mode header {
-  background-color: #ffffff !important; /* forces hero section white */
+  background-color: #e0e0e0 !important; /* forces hero section white */
   color: #121212;                       /* text black for contrast */
 }
 
 body.light-mode nav {
-  background-color: #e0e0e0;
+  background-color: #ffffff;
 }
 
 body.light-mode section,
