@@ -61,3 +61,34 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = randomBlog;
   });
 });
+
+// Mobile toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('theme-toggle');
+  const mobileToggle = document.getElementById('mobile-theme-toggle');
+  const storedTheme = localStorage.getItem('theme') || 'dark';
+
+  function applyTheme(isDark) {
+    if(isDark) {
+      document.body.classList.remove('light-mode');
+      toggle && (toggle.textContent = '🌙');
+      mobileToggle && (mobileToggle.textContent = '🌙');
+    } else {
+      document.body.classList.add('light-mode');
+      toggle && (toggle.textContent = '☀️');
+      mobileToggle && (mobileToggle.textContent = '☀️');
+    }
+  }
+
+  const isDark = storedTheme === 'dark';
+  applyTheme(isDark);
+
+  const handler = () => {
+    const darkNow = document.body.classList.toggle('light-mode') ? false : true;
+    localStorage.setItem('theme', darkNow ? 'dark' : 'light');
+    applyTheme(darkNow);
+  };
+
+  toggle && toggle.addEventListener('click', handler);
+  mobileToggle && mobileToggle.addEventListener('click', handler);
+});
