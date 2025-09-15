@@ -13,6 +13,16 @@ layout: default
     </p>
     <div class="post-content">
       {{ content }}
+
+      {% if page.tags %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          {% assign safe_tag = tag | downcase | replace: ' ', '-' %}
+          <a href="{{ '/tags/' | append: tag | append: '/' | relative_url }}" 
+             class="tag tag-{{ safe_tag }}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>

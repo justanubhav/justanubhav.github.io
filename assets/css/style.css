@@ -530,3 +530,39 @@ body.light-mode #blurb-search:focus {
 #blurb-search:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
+
+/* Base flair style */
+.post-tags {
+  margin-top: 1em;
+}
+
+.post-tags .tag {
+  display: inline-block;
+  padding: 0.25em 0.65em;
+  margin: 0.15em 0.15em 0.15em 0;
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.post-tags .tag:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+/* Tag-specific colors */
+.tag-personal { background-color: #ff4500; }
+.tag-intro { background-color: #0079d3; }
+.tag-technology { background-color: #46d160; }
+.tag-personal-projects { background-color: #ffb000; }
+.tag-fun { background-color: #d4a017; }
+.tag-other { background-color: #6e6e6e; }
+.tag-experimental { background-color: #ff66cc; }
+
+/* Add more tag-* classes as needed */

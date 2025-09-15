@@ -4,6 +4,7 @@ title: "What is this site, and why did I create it?"
 date: 2025-09-13
 scrollbar: true
 pinned: true
+tags: [personal]
 ---
 
 Why, hello there, inquisitive speech bubble. I'm Anubhav. You might see my name in the front page. I made this site mainly because I figure I could use this page to articulate some of the things I think and just because I think it is cool to have an introductory page of yourself even when it is entirely pointless because you have zero things to actually introduce about yourself.
