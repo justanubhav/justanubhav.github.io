@@ -558,10 +558,10 @@ body.light-mode #blurb-search:focus {
 
 /* Tag-specific colors */
 .tag-personal { background-color: #ff4500; }
-.tag-intro { background-color: #0079d3; }
-.tag-technology { background-color: #46d160; }
-.tag-personal-projects { background-color: #ffb000; }
-.tag-fun { background-color: #d4a017; }
+.tag-politics { background-color: #0079d3; }
+.tag-philosophy { background-color: #46d160; }
+.tag-religion { background-color: #ffb000; }
+.tag-review { background-color: #d4a017; }
 .tag-other { background-color: #6e6e6e; }
 .tag-experimental { background-color: #ff66cc; }
 
