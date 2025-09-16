@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --------------------------
 const blurbs = [
   "/2025/09/13/my-first-post.html",
+  "/2025-09-16-morality.md"
   // Add more blurb URLs here as needed
 ];
 
