@@ -1,14 +1,15 @@
 ---
 layout: default
 title: Philosophy
+tag: philosophy
 ---
 
-<div style="padding-top: 5rem;"> <!-- adjust 5rem as needed for your navbar height -->
+<div style="padding-top: 5rem;">
   <h1>{{ page.title }}</h1>
 
   <div class="tag-posts">
     {% for post in site.posts %}
-      {% if post.tags contains "philosophy" %}
+      {% if post.tags contains page.tag %}
         <div class="post-card">
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
           <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>

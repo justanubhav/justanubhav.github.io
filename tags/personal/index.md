@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Personal
+tag: personal
 ---
 
 <div style="padding-top: 5rem;"> <!-- adjust 5rem as needed for your navbar height -->
