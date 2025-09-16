@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Personal
+title: Philosophy
 ---
 
 <div style="padding-top: 5rem;"> <!-- adjust 5rem as needed for your navbar height -->
@@ -8,7 +8,7 @@ title: Personal
 
   <div class="tag-posts">
     {% for post in site.posts %}
-      {% if post.tags contains "personal" %}
+      {% if post.tags contains "philosophy" %}
         <div class="post-card">
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
           <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
