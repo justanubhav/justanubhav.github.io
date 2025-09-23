@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "On Internet Culture's Aversion to AI"
-date: 2025-09-16
+date: 2025-09-23
 scrollbar: true
 tags: [technology]
 ---
