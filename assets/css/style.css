@@ -562,7 +562,7 @@ body.light-mode #blurb-search:focus {
 .tag-philosophy { background-color: #46d160; }
 .tag-religion { background-color: #ffb000; }
 .tag-review { background-color: #d4a017; }
-.tag-other { background-color: #6e6e6e; }
+.tag-technology { background-color: #6e6e6e; }
 .tag-experimental { background-color: #ff66cc; }
 
 /* Add more tag-* classes as needed */
