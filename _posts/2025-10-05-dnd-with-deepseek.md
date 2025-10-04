@@ -5,7 +5,7 @@ date: 2025-09-23
 scrollbar: true
 tags: [personal, technology]
 ---
-I don't know how unique I am for this, but one of my favorite activities to do is worldbuilding for no good reason. I never intend to write stories with it (I am, in fact, fascinatingly bad at writing stories, and writing in general, as one can observe from my "blurbs"), but I love to spend hours building maps with complex geopolitics and cultures.
+I don't know how unique I am for this, but one of my favorite activities to do is worldbuilding for no good reason. I never intend to write stories with it (I am, in fact, fascinatingly bad at writing stories, and writing in general, as one can observe from reading my "blurbs"), but I love to spend hours building maps with complex geopolitics and cultures.
 
 My favorite tool for this is called Azgaar's Fantasy Map Generator. The name is self-explanatory: It generates a continental (sometimes mult-continental) map for you with randomized nation-states and empires. It is *extremely* detailed, from detailing generated randomly provinces, biomes, heightmaps, temperatures, routes, cultures, burgs, diplomatic relations, military prowess, all the way down to things I've not even touched yet. It works perfectly for what I want to do, and is an extremely addictive tool for me that I can spend hours upon hours in.
 
