@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Spend a Whole Lot of Time Worldbuilding So I Decided to Use DeepSeek to Play Dungeons & Dragons With It"
-date: 2025-09-23
+date: 2025-10-05
 scrollbar: true
 tags: [personal, technology]
 ---
