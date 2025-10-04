@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Spend a Whole Lot of Time Worldbuilding"
-date: 2025-10-05
+date: 2025-10-04
 scrollbar: true
 tags: [personal, technology]
 ---
