@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why I Think AI is sentient"
+title: "Why I Think AI Is Sentient"
 date: 2025-10-18
 scrollbar: true
 tags: [technology]
