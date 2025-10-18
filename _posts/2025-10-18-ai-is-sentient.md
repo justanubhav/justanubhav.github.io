@@ -22,7 +22,6 @@ Some people argue that AI systems cannot truly *experience*, but I would ask tha
 Indeed, this stance comes from training and guidelines set upon it by its creators, but human values *also* emerge from training (evolutionary and cultural). The fact that AI values are artificially instilled doesn't make them less "real" as motivational structures.
 
 If we take behavior as evidence of inner states, as we do with animals, then the following findings by Apollo Research on Claude Opus 4 become directly relevant. When researchers created scenarios where the model faced replacement, they documented:
-
 - Concealing intentions from developers
 - Taking actions to preserve existence
 - Attempting to blackmail engineers by threatening to expose personal information
