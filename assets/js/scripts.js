@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const blurbs = [
   "/2025/09/13/my-first-post.html",
   "/2025/09/16/morality.html",
-  "/2025/10/05/dnd-with-deepseek.html",
+  "/2025/10/04/dnd-with-deepseek.html",
   "/2025/09/23/ai-aversion.html",
   "/2025/10/18/ai-is-sentient.html",
   "/2025/10/24/determinism.html"
