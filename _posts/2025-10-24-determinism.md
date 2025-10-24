@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "On Free Will"
-date: 2025-10-18
+date: 2025-10-24
 scrollbar: true
 tags: [philosophy]
 ---
