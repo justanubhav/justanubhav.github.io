@@ -56,7 +56,7 @@ const blurbs = [
   "/2025/10/05/dnd-with-deepseek.html",
   "/2025/09/23/ai-aversion.html",
   "/2025/10/18/ai-is-sentient.html",
-  "/2025/10-24-determinism.html"
+  "/2025/10/24/determinism.html"
   // Add more blurb URLs here as needed
 ];
 
