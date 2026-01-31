@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On Free Will"
+title: "On Sin"
 date: 2026-01-31
 scrollbar: true
 tags: [personal]
