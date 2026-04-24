@@ -723,6 +723,19 @@ h3 {
   padding-top: 7.5rem;
 }
 
+.credential-section + .credential-section {
+  margin-top: 2rem;
+}
+
+.credential-section-header {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.credential-section-header h3 {
+  margin: 0.15rem 0 0;
+}
+
 .credential-stack {
   display: grid;
   gap: 1rem;
@@ -739,6 +752,11 @@ h3 {
 
 .credential-card h3 {
   margin: 0;
+}
+
+.credential-card-placeholder {
+  border-style: dashed;
+  border-color: rgba(255,255,255,0.12);
 }
 
 .credential-topline {
