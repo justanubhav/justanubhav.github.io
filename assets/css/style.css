@@ -124,10 +124,6 @@ section {
 
 .eyebrow,
 .section-kicker,
-.resume-label {
-  color: var(--accent-blue);
-}
-
 .eyebrow::before,
 .section-kicker::before {
   content: "";
@@ -303,15 +299,25 @@ h3 {
 }
 
 .resume-panel {
+  display: block;
   padding: 1.35rem;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
   background: linear-gradient(180deg, rgba(18, 18, 19, 0.96), rgba(12, 12, 13, 0.98));
   text-align: left;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.resume-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.14);
 }
 
 .resume-label {
   margin: 0 0 0.75rem;
+  color: var(--accent-blue);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -390,7 +396,7 @@ h3 {
 
 #blurb-search::placeholder {
   color: #b3aba2;
-  font-weight: 500;
+  font-weight: 600;
   opacity: 1;
 }
 
@@ -451,12 +457,13 @@ h3 {
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(19, 19, 20, 0.96), rgba(13, 13, 14, 0.98));
   text-align: left;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .post-card-featured {
   padding: 1.1rem 1.2rem;
-  background: linear-gradient(180deg, rgba(18, 18, 19, 0.94), rgba(12, 12, 13, 0.96));
+  background: #121213;
   opacity: 0.94;
 }
 
@@ -466,22 +473,14 @@ h3 {
 }
 
 .post-card-stream {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1.1rem 1.5rem;
-  align-items: end;
-}
-
-.post-card-stream .read-more {
-  align-self: center;
-  margin-top: 0;
-  white-space: nowrap;
+  display: block;
 }
 
 .post-card-stream:hover,
 .post-card-featured:hover {
-  transform: translateY(-2px);
-  border-color: rgba(215, 154, 91, 0.16);
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.34);
 }
 
 .post-card-stream:hover h2 a,
@@ -504,6 +503,10 @@ h3 {
 
 .post-card h2 a:hover {
   color: #f0f0f0;
+}
+
+.blurb-card-link {
+  display: block;
 }
 
 .post-date {
@@ -559,18 +562,6 @@ h3 {
   color: #cec1b5;
   font-size: 0.74rem;
   letter-spacing: 0.03em;
-}
-
-.read-more {
-  display: inline-flex;
-  margin-top: 1rem;
-  color: var(--accent-orange);
-  font-size: 0.92rem;
-  font-weight: 500;
-}
-
-.read-more:hover {
-  color: #efc28f;
 }
 
 .post-card a {
@@ -636,6 +627,40 @@ h3 {
   border-color: rgba(228, 64, 95, 0.42);
   background: linear-gradient(135deg, rgba(131, 58, 180, 0.24), rgba(225, 48, 108, 0.24), rgba(252, 175, 69, 0.24));
   color: #ffe5ec;
+}
+
+.detail-shell {
+  max-width: 980px;
+  padding-top: 7.5rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.detail-card {
+  padding: 1.35rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(18, 18, 19, 0.96), rgba(12, 12, 13, 0.98));
+  box-shadow: 0 12px 34px rgba(0,0,0,0.22);
+  text-align: left;
+}
+
+.detail-label {
+  margin: 0 0 0.75rem;
+  color: var(--accent-blue);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detail-text {
+  margin: 0;
+  color: var(--muted);
 }
 
 .modal {
@@ -778,6 +803,10 @@ footer {
   .resume-grid {
     grid-template-columns: 1fr;
   }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -833,15 +862,6 @@ footer {
 
   .post-card-featured {
     padding: 1.1rem 1.15rem;
-  }
-
-  .post-card-stream {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-
-  .post-card-stream .read-more {
-    margin-top: 0.9rem;
   }
 
   .blurb-list-header {

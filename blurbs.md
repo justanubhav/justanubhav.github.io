@@ -34,13 +34,14 @@ permalink: /blurbs/
                    data-title="{{ post.title | downcase | escape }}"
                    data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
                    data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
-            <div class="post-meta-row">
-              <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-              <span class="pinned-badge" title="Pinned">Pinned</span>
-            </div>
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-            <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
+            <a class="blurb-card-link" href="{{ post.url | relative_url }}">
+              <div class="post-meta-row">
+                <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                <span class="pinned-badge" title="Pinned">Pinned</span>
+              </div>
+              <h2>{{ post.title }}</h2>
+              <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+            </a>
           </article>
         {% endfor %}
       </div>
@@ -59,19 +60,20 @@ permalink: /blurbs/
                  data-title="{{ post.title | downcase | escape }}"
                  data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
                  data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
-          <div class="post-card-main">
-            <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-            {% if post.tags %}
-              <div class="post-tag-row">
-                {% for tag in post.tags limit:3 %}
-                  <span class="post-mini-tag">{{ tag }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-          <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
+          <a class="blurb-card-link" href="{{ post.url | relative_url }}">
+            <div class="post-card-main">
+              <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+              <h2>{{ post.title }}</h2>
+              <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+              {% if post.tags %}
+                <div class="post-tag-row">
+                  {% for tag in post.tags limit:3 %}
+                    <span class="post-mini-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </a>
         </article>
       {% endfor %}
     </div>
