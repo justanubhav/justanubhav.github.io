@@ -17,13 +17,27 @@
 <body id="top">
   <div id="scroll-progress"></div>
 
-  <nav>
-    <a href="{{ '/#top' | relative_url }}">Home</a>
-    <a href="{{ '/#profile' | relative_url }}">Profile</a>
-    <a href="{{ '/#resume' | relative_url }}">Resume</a>
-    <a href="{{ '/#contact' | relative_url }}">Contact</a>
-    <a href="{{ '/blurbs/' | relative_url }}">Blurbs</a>
-  </nav>
+  <div class="site-nav-shell">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="site-nav">
+      <a href="{{ '/#top' | relative_url }}">Home</a>
+      <a href="{{ '/#profile' | relative_url }}">Profile</a>
+      <a href="{{ '/#resume' | relative_url }}">Resume</a>
+      <a href="{{ '/#contact' | relative_url }}">Contact</a>
+      <a href="{{ '/blurbs/' | relative_url }}">Blurbs</a>
+    </nav>
+  </div>
 
   <main>
     {{ content }}

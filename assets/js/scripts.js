@@ -1,6 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // --------------------------
+  // Mobile navigation
+  // --------------------------
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.getElementById('site-nav');
+
+  if (navToggle && siteNav) {
+    const navLinks = siteNav.querySelectorAll('a');
+
+    function closeNav() {
+      siteNav.classList.remove('is-open');
+      navToggle.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
+
+    navToggle.addEventListener('click', () => {
+      const willOpen = !siteNav.classList.contains('is-open');
+      siteNav.classList.toggle('is-open', willOpen);
+      navToggle.classList.toggle('is-open', willOpen);
+      navToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', willOpen);
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+        closeNav();
+      }
+    });
+  }
+
+  // --------------------------
   // Fade-in on scroll
   // --------------------------
   const faders = document.querySelectorAll('.fade-in');
