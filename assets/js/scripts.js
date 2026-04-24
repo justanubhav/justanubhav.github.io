@@ -98,4 +98,55 @@ if (progressBar) {
     });
   }
 
+  // --------------------------
+  // Card modal
+  // --------------------------
+  const modal = document.getElementById('card-modal');
+  const modalTitle = document.getElementById('card-modal-title');
+  const modalBody = document.getElementById('card-modal-body');
+  const cardButtons = document.querySelectorAll('.card-button');
+  let lastFocusedButton = null;
+
+  if (modal && modalTitle && modalBody && cardButtons.length) {
+    const closeTargets = modal.querySelectorAll('[data-modal-close]');
+    const closeButton = modal.querySelector('.modal-close');
+
+    function openModal(button) {
+      lastFocusedButton = button;
+      modalTitle.textContent = button.dataset.modalTitle || '';
+      modalBody.textContent = button.dataset.modalBody || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (closeButton) {
+        closeButton.focus();
+      }
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      if (lastFocusedButton) {
+        lastFocusedButton.focus();
+      }
+    }
+
+    cardButtons.forEach(button => {
+      button.addEventListener('click', () => openModal(button));
+    });
+
+    closeTargets.forEach(element => {
+      element.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  }
+
 });
