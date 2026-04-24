@@ -756,8 +756,6 @@ h3 {
 
 .credential-card h3 {
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 .credential-card-placeholder {
@@ -768,9 +766,9 @@ h3 {
 .credential-topline {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.55rem;
 }
 
 .credential-head {
@@ -787,8 +785,6 @@ h3 {
   color: #98a6b8;
   font-size: 0.95rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 .credential-meta-row {
@@ -803,8 +799,6 @@ h3 {
   color: #aab8c8;
   font-size: 0.82rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 .credential-card-split {
