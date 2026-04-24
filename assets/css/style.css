@@ -90,19 +90,20 @@ nav a {
 nav a:hover,
 nav a:focus-visible {
   color: var(--text);
-  background: rgba(215, 154, 91, 0.06);
+  background: rgba(255,255,255,0.05);
   outline: none;
 }
 
 .hero {
-  min-height: 82vh;
-  display: flex;
+  min-height: 84vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
   align-items: center;
-  justify-content: center;
-  max-width: 920px;
+  gap: 2.5rem;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 7rem 1rem 2.5rem;
-  text-align: center;
+  text-align: left;
 }
 
 .hero-copy,
@@ -124,6 +125,10 @@ section {
 
 .eyebrow,
 .section-kicker,
+.resume-label {
+  color: var(--accent-blue);
+}
+
 .eyebrow::before,
 .section-kicker::before {
   content: "";
@@ -143,26 +148,76 @@ h3,
 }
 
 .hero h1 {
-  max-width: 11ch;
-  margin: 0 auto;
-  font-size: clamp(3rem, 6vw, 4.6rem);
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(3.2rem, 6vw, 5.1rem);
   line-height: 1.02;
   font-weight: 600;
 }
 
+.hero-subtitle {
+  margin: 0.8rem 0 0;
+  color: #cfd6df;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .hero-lead {
   max-width: 580px;
-  margin: 1.1rem auto 0;
+  margin: 1rem 0 0;
   color: var(--muted);
   font-size: 1rem;
 }
 
 .hero-actions {
   display: flex;
-  justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
   margin-top: 1.6rem;
+}
+
+.hero-media {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-portrait {
+  width: min(320px, 100%);
+  aspect-ratio: 4 / 5;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  background: rgba(17, 17, 18, 0.82);
+  box-shadow: 0 22px 54px rgba(0,0,0,0.28);
+}
+
+.hero-portrait-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(255,255,255,0.08), transparent 20%),
+    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)),
+    #121213;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.hero-portrait-mark {
+  color: #d7dee6;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.hero-portrait-note {
+  color: var(--muted-soft);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .secondary-action,
@@ -182,8 +237,8 @@ h3,
 .secondary-action:hover,
 .contact a:hover {
   transform: translateY(-1px);
-  border-color: rgba(215, 154, 91, 0.22);
-  background: rgba(215, 154, 91, 0.05);
+  border-color: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.05);
 }
 
 section {
@@ -240,15 +295,15 @@ h3 {
   justify-content: flex-start;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.012)),
-    linear-gradient(180deg, rgba(20, 20, 21, 0.96), rgba(14, 14, 15, 0.98));
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  background: rgba(17, 17, 18, 0.92);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.24);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(215, 154, 91, 0.18);
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: 0 26px 58px rgba(0,0,0,0.36);
 }
 
 .card p {
@@ -263,8 +318,9 @@ h3 {
 }
 
 .card-button:focus-visible {
-  outline: 2px solid var(--accent-orange);
-  outline-offset: 3px;
+  outline: none;
+  border-color: rgba(255,255,255,0.16);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 18px 44px rgba(0,0,0,0.28);
 }
 
 .card-label {
@@ -303,15 +359,15 @@ h3 {
   padding: 1.35rem;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(18, 18, 19, 0.96), rgba(12, 12, 13, 0.98));
+  background: rgba(17, 17, 18, 0.92);
   text-align: left;
-  box-shadow: 0 12px 34px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.24);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .resume-panel:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 44px rgba(0,0,0,0.3);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 26px 58px rgba(0,0,0,0.36);
   border-color: rgba(255,255,255,0.14);
 }
 
@@ -407,17 +463,17 @@ h3 {
 }
 
 .blurb-featured-strip {
-  max-width: 840px;
-  margin: 0 auto 2.8rem;
+  max-width: 760px;
+  margin: 0 auto 3.4rem;
 }
 
 .featured-strip-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .blurb-list {
-  max-width: 840px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
@@ -446,16 +502,16 @@ h3 {
 
 .post-stream {
   display: grid;
-  gap: 1.2rem;
+  gap: 1.8rem;
 }
 
 .post-card {
   max-width: none;
   margin: 0;
-  padding: 1.35rem 1.4rem;
+  padding: 1.55rem 1.6rem;
   border: 1px solid rgba(255,255,255,0.07);
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(19, 19, 20, 0.96), rgba(13, 13, 14, 0.98));
+  background: rgba(17, 17, 18, 0.92);
   text-align: left;
   box-shadow: 0 10px 28px rgba(0,0,0,0.2);
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
@@ -478,7 +534,7 @@ h3 {
 
 .post-card-stream:hover,
 .post-card-featured:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.01);
   border-color: rgba(255,255,255,0.14);
   box-shadow: 0 22px 48px rgba(0,0,0,0.34);
 }
@@ -644,8 +700,8 @@ h3 {
   padding: 1.35rem;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(18, 18, 19, 0.96), rgba(12, 12, 13, 0.98));
-  box-shadow: 0 12px 34px rgba(0,0,0,0.22);
+  background: rgba(17, 17, 18, 0.92);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.24);
   text-align: left;
 }
 
@@ -794,6 +850,8 @@ footer {
   .hero {
     min-height: auto;
     padding-top: 7.5rem;
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .card-wrapper {
@@ -831,6 +889,16 @@ footer {
 
   .hero h1 {
     font-size: clamp(2.4rem, 11vw, 3.8rem);
+  }
+
+  .hero-lead,
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 
   h2 {
