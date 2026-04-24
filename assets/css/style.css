@@ -661,12 +661,14 @@ h3 {
 }
 
 .post-shell {
-  max-width: 920px;
+  max-width: 1120px;
   padding-top: 7.5rem;
 }
 
 .post-shell .post-card {
-  padding: 2rem 0 0;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 0;
   border: 0;
   background: transparent;
 }
@@ -674,6 +676,7 @@ h3 {
 .post-content {
   color: #d7d7d7;
   font-size: 1.06rem;
+  line-height: 1.8;
 }
 
 .post-content p,
