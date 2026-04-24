@@ -420,12 +420,12 @@ h3 {
 }
 
 .blurb-shell {
-  max-width: 920px;
+  max-width: 1080px;
   padding-top: 7.5rem;
 }
 
 .blurb-hero {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto 3.6rem;
 }
 
@@ -438,9 +438,9 @@ h3 {
 }
 
 .blurb-intro {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0.85rem auto 0;
-  color: #c7ced7;
+  color: #d0d6de;
   font-size: 1rem;
 }
 
@@ -491,7 +491,7 @@ h3 {
 }
 
 .blurb-featured-strip {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto 3.8rem;
 }
 
@@ -501,7 +501,7 @@ h3 {
 }
 
 .blurb-list {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -524,7 +524,7 @@ h3 {
 
 .blurb-list-copy {
   margin: 0;
-  color: #b8c1cb;
+  color: #c5ccd4;
   font-size: 0.95rem;
 }
 
@@ -628,9 +628,9 @@ h3 {
 }
 
 .post-excerpt {
-  max-width: 60ch;
+  max-width: 72ch;
   margin: 1rem 0 0;
-  color: #c1c9d2;
+  color: #cfd5dc;
   line-height: 1.75;
 }
 
