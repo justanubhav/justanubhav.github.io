@@ -25,10 +25,10 @@ permalink: /blurbs/
   {% assign pinned_posts = site.posts | where_exp: "post", "post.pinned == true" %}
   {% assign regular_posts = site.posts | where_exp: "post", "post.pinned != true" %}
 
-  <div class="blurb-layout">
-    {% if pinned_posts.size > 0 %}
-      <div class="blurb-featured">
-        <p class="blurb-group-label">Featured</p>
+  {% if pinned_posts.size > 0 %}
+    <div class="blurb-featured-strip">
+      <p class="blurb-group-label">Featured</p>
+      <div class="featured-strip-list">
         {% for post in pinned_posts %}
           <article class="post-card post-card-featured pinned"
                    data-title="{{ post.title | downcase | escape }}"
@@ -39,6 +39,28 @@ permalink: /blurbs/
               <span class="pinned-badge" title="Pinned">Pinned</span>
             </div>
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="blurb-list">
+    <div class="blurb-list-header">
+      <p class="blurb-group-label">Archive</p>
+      <p class="blurb-list-copy">Recent notes and essays.</p>
+    </div>
+
+    <div class="post-stream">
+      {% for post in regular_posts %}
+        <article class="post-card post-card-stream"
+                 data-title="{{ post.title | downcase | escape }}"
+                 data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
+                 data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
+          <div class="post-card-main">
+            <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
             <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
             {% if post.tags %}
               <div class="post-tag-row">
@@ -47,40 +69,10 @@ permalink: /blurbs/
                 {% endfor %}
               </div>
             {% endif %}
-            <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
-          </article>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    <div class="blurb-list">
-      <div class="blurb-list-header">
-        <p class="blurb-group-label">Archive</p>
-        <p class="blurb-list-copy">Recent notes and essays.</p>
-      </div>
-
-      <div class="post-stream">
-        {% for post in regular_posts %}
-          <article class="post-card post-card-stream"
-                   data-title="{{ post.title | downcase | escape }}"
-                   data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
-                   data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
-            <div class="post-card-main">
-              <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-              <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-              {% if post.tags %}
-                <div class="post-tag-row">
-                  {% for tag in post.tags limit:3 %}
-                    <span class="post-mini-tag">{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
-            <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
-          </article>
-        {% endfor %}
-      </div>
+          </div>
+          <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
+        </article>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -98,10 +90,6 @@ permalink: /blurbs/
       const tags = post.dataset.tags || '';
       const match = q === '' || title.includes(q) || excerpt.includes(q) || tags.includes(q);
       post.style.display = match ? '' : 'none';
-      const hr = post.nextElementSibling;
-      if (hr && hr.classList.contains('post-divider')) {
-        hr.style.display = match ? '' : 'none';
-      }
     });
   }
 
