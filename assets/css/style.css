@@ -322,3 +322,14 @@ footer {
 .tag-review { background: #d4a017; }
 .tag-technology { background: #6e6e6e; }
 .tag-experimental { background: #ff66cc; }
+
+/* Scroll Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background-color: #ff9800;
+  z-index: 2000;
+}
