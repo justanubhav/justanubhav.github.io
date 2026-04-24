@@ -646,6 +646,10 @@ h3 {
   margin: 1rem 0 0;
   color: var(--muted);
   line-height: 1.72;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .post-tag-row {
