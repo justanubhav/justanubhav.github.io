@@ -4,40 +4,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fade-in on scroll
   // --------------------------
   const faders = document.querySelectorAll('.fade-in');
+
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        obs.unobserve(entry.target); // Animate only once
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
 
-  faders.forEach(fader => observer.observe(fader));
-
-// --------------------------
-// Hero section featured blurb click
-// --------------------------
-const blurbs = [
-  "/blurbs/"
-  // Add more blurb URLs here as needed
-];
-
-const featuredBlurb = document.getElementById('featured-blurb');
-
-if(featuredBlurb){
-  featuredBlurb.style.cursor = "pointer"; // show pointer
-  featuredBlurb.addEventListener('click', () => {
-    const randomBlurb = blurbs[Math.floor(Math.random() * blurbs.length)];
-    window.location.href = randomBlurb;
-  });
-}
+  faders.forEach(el => observer.observe(el));
 
   // --------------------------
-  // Scroll Progress Bar (only on blurb pages)
+  // Featured blurb click
+  // --------------------------
+  const blurbs = ["/blurbs/"];
+
+  const featuredBlurb = document.getElementById('featured-blurb');
+
+  if (featuredBlurb) {
+    featuredBlurb.style.cursor = "pointer";
+
+    featuredBlurb.addEventListener('click', () => {
+      const randomBlurb = blurbs[Math.floor(Math.random() * blurbs.length)];
+      window.location.href = randomBlurb;
+    });
+  }
+
+  // --------------------------
+  // Scroll Progress Bar
   // --------------------------
   const progressBar = document.getElementById('scroll-progress');
-  if(progressBar) {
+
+  if (progressBar) {
     window.addEventListener('scroll', () => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -46,35 +46,44 @@ if(featuredBlurb){
     });
   }
 
-});
-
-// Blurb search
-(function(){
+  // --------------------------
+  // Blurb search
+  // --------------------------
   const searchInput = document.getElementById('blurb-search');
   const posts = Array.from(document.querySelectorAll('.post-card'));
 
-  function filterPosts(){
-    const q = (searchInput.value || '').toLowerCase().trim();
+  if (searchInput) {
+    function filterPosts() {
+      const q = searchInput.value.toLowerCase().trim();
 
-    posts.forEach(post => {
-      const title = (post.dataset.title || '').toLowerCase();
-      const excerpt = (post.dataset.excerpt || '').toLowerCase();
-      const tags = (post.dataset.tags || '').toLowerCase();
-      const show = q === '' || title.includes(q) || excerpt.includes(q) || tags.includes(q);
-      post.style.display = show ? '' : 'none';
-      const hr = post.nextElementSibling;
-      if(hr && hr.classList.contains('post-divider')) hr.style.display = show ? '' : 'none';
+      posts.forEach(post => {
+        const title = (post.dataset.title || '').toLowerCase();
+        const excerpt = (post.dataset.excerpt || '').toLowerCase();
+        const tags = (post.dataset.tags || '').toLowerCase();
+
+        const show = !q || title.includes(q) || excerpt.includes(q) || tags.includes(q);
+
+        post.style.display = show ? '' : 'none';
+
+        const hr = post.nextElementSibling;
+        if (hr && hr.classList.contains('post-divider')) {
+          hr.style.display = show ? '' : 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterPosts);
+
+    document.addEventListener('keydown', e => {
+      if (
+        e.key === '/' &&
+        !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)
+      ) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
     });
   }
 
-  searchInput.addEventListener('input', filterPosts);
-
-  // Focus search with "/"
-  document.addEventListener('keydown', e => {
-    if(e.key === '/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){
-      e.preventDefault();
-      searchInput.focus();
-      searchInput.select();
-    }
-  });
-})();
+});
