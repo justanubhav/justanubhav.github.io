@@ -661,21 +661,22 @@ h3 {
 }
 
 .post-shell {
-  max-width: 1120px;
+  max-width: 1280px;
   padding-top: 7.5rem;
 }
 
 .post-shell .post-card {
-  max-width: 980px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 2rem 1.25rem 0;
+  padding: 2rem 2rem 0;
   border: 0;
   background: transparent;
 }
 
 .post-content {
   color: #d7d7d7;
-  font-size: 1.06rem;
+  max-width: 84ch;
+  font-size: 1.08rem;
   line-height: 1.8;
 }
 
@@ -1003,6 +1004,14 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .hero-media {
+    order: -1;
+  }
+
+  .hero-portrait {
+    width: min(320px, 72vw);
+  }
+
   .credential-card-split {
     grid-template-columns: 1fr;
   }
@@ -1010,6 +1019,25 @@ footer {
   .resume-panel {
     grid-template-columns: 1fr;
     gap: 0.7rem;
+  }
+
+  .credential-head {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .credential-period {
+    text-align: left;
+    padding-top: 0;
+  }
+
+  .post-shell .post-card {
+    max-width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .post-content {
+    max-width: 100%;
   }
 
   .resume-content {
@@ -1040,10 +1068,17 @@ footer {
 
   .hero {
     padding-inline: 0.25rem;
+    gap: 1.4rem;
   }
 
   .hero h1 {
     font-size: clamp(2.4rem, 11vw, 3.8rem);
+  }
+
+  .hero-portrait {
+    width: min(280px, 82vw);
+    padding: 0.7rem;
+    border-radius: 18px;
   }
 
   .hero-lead,
@@ -1083,6 +1118,16 @@ footer {
     padding: 1.5rem;
   }
 
+  .resume-panel,
+  .credential-card {
+    padding: 1.15rem;
+  }
+
+  .credential-meta-row {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
   .post-card-featured {
     padding: 1.1rem 1.15rem;
   }
@@ -1090,6 +1135,28 @@ footer {
   .blurb-toolbar-shell,
   .blurb-panel {
     padding: 1.15rem;
+  }
+
+  .blurb-title,
+  .post-card h1 {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+  }
+
+  .post-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .post-shell {
+    padding-top: 7rem;
+  }
+
+  .post-shell .post-card {
+    padding: 1.25rem 0.15rem 0;
+  }
+
+  .post-content {
+    font-size: 1rem;
+    line-height: 1.75;
   }
 
   .blurb-list-header {
