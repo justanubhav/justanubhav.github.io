@@ -15,38 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   faders.forEach(fader => observer.observe(fader));
 
-  // --------------------------
-  // Dark/Light Mode Toggle (Desktop + Mobile)
-  // --------------------------
-  const toggle = document.getElementById('theme-toggle');
-  const mobileToggle = document.getElementById('mobile-theme-toggle');
-  const storedTheme = localStorage.getItem('theme') || 'dark';
-
-  // Apply stored theme
-  let isDark = storedTheme === 'dark';
-  function applyTheme(isDarkMode) {
-    if(isDarkMode) {
-      document.body.classList.remove('light-mode');
-      toggle && (toggle.textContent = '🌙');
-      mobileToggle && (mobileToggle.textContent = '🌙');
-    } else {
-      document.body.classList.add('light-mode');
-      toggle && (toggle.textContent = '☀️');
-      mobileToggle && (mobileToggle.textContent = '☀️');
-    }
-  }
-  applyTheme(isDark);
-
-  // Theme toggle handler
-  const handleToggle = () => {
-    isDark = !isDark;
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    applyTheme(isDark);
-  };
-
-  toggle && toggle.addEventListener('click', handleToggle);
-  mobileToggle && mobileToggle.addEventListener('click', handleToggle);
-
 // --------------------------
 // Hero section featured blurb click
 // --------------------------

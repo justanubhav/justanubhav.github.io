@@ -264,132 +264,6 @@ footer {
 }
 
 /* ===========================
-   Light Mode Styles
-   =========================== */
-body.light-mode {
-  background-color: #f5f5f5;
-  color: #121212; /* All text black */
-}
-
-body.light-mode header {
-  background-color: #e0e0e0 !important; /* forces hero section white */
-  color: #121212;                       /* text black for contrast */
-}
-
-body.light-mode nav {
-  background-color: #ffffff;
-}
-
-body.light-mode section,
-body.light-mode .fade-in {  /* wrapper rectangles transparent */
-  background-color: transparent;
-  color: #121212;
-}
-
-body.light-mode .card,
-body.light-mode .post-card,
-body.light-mode .contact {
-  background-color: #fff; /* distinguishable from background */
-  color: #121212;
-}
-
-body.light-mode h2, 
-body.light-mode h1, 
-body.light-mode p, 
-body.light-mode a {
-  color: #121212; /* override any gray */
-}
-
-body.light-mode a:hover {
-  color: #000;
-}
-
-/* Toggle button slightly lighter */
-body.light-mode #theme-toggle {
-  background-color: #ddd;
-  color: #121212;
-}
-
-body.light-mode #theme-toggle:hover {
-  background-color: #bbb;
-  color: #000;
-}
-
-/* Contact links */
-body.light-mode .contact a {
-  background-color: #e0e0e0;
-  color: #121212;
-}
-
-body.light-mode .contact a:hover {
-  background-color: #ccc;
-}
-
-/* blurb post date darker for readability */
-body.light-mode .post-card .post-date {
-  color: #444;
-}
-
-/* Scroll Progress Bar */
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background-color: #ff9800; /* accent color */
-  z-index: 2000;
-  transition: width 0.1s ease-out;
-}
-
-/* ===========================
-   Hero Section blurb Advertise
-   =========================== */
-.hero-feature {
-  margin-top: 1.5rem;
-  padding: 1.5rem 2.5rem;
-  border-radius: 12px;
-  background-color: #222;  /* same style as cards */
-  color: #e0e0e0;
-  font-weight: bold;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.hero-feature:hover {
-  transform: scale(1.05);
-  background-color: #333;
-}
-
-.hero-feature p {
-  margin: 0;
-}
-
-/* Light Mode Featured blurb */
-body.light-mode .hero-feature {
-  margin-top: 1.5rem;
-  padding: 1.5rem 2.5rem;
-  border-radius: 12px;
-  background-color: #fff;  /* card-like in light mode */
-  color: #121212;          /* dark text */
-  font-weight: bold;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-  border: 1px solid #ccc;  /* subtle outline like gray */
-}
-
-body.light-mode .hero-feature:hover {
-  transform: scale(1.05);
-  background-color: #f0f0f0;  /* slightly darker on hover */
-}
-
-body.light-mode .hero-feature p {
-  margin: 0;
-}
-
-/* ===========================
    blurb search (fits dark + light theme)
    =========================== */
 
@@ -419,23 +293,6 @@ body.light-mode .hero-feature p {
 
 #blurb-search:focus {
   border-bottom-color: #ff9800; /* accent color */
-}
-
-/* Light mode overrides */
-body.light-mode .blurb-title {
-  color: #121212;
-}
-
-body.light-mode #blurb-search {
-  background-color: #fff;
-  color: #121212;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-body.light-mode #blurb-search:focus {
-  border: 1px solid #ff9800;
-  box-shadow: 0 0 6px rgba(255,152,0,0.3);
 }
 
 /* Mobile theme toggle button */
@@ -505,24 +362,6 @@ body.light-mode #blurb-search:focus {
   outline: none;
   border: 2px solid #888;  /* gray embolden on focus */
   box-shadow: 0 0 8px rgba(136,136,136,0.4);
-  transform: scale(1.02);
-}
-
-/* Light mode overrides */
-body.light-mode .blurb-title {
-  color: #121212;
-}
-
-body.light-mode #blurb-search {
-  background-color: #fff;
-  color: #121212;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-body.light-mode #blurb-search:focus {
-  border: 2px solid #888;
-  box-shadow: 0 0 8px rgba(136,136,136,0.3);
   transform: scale(1.02);
 }
 
