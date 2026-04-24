@@ -7,34 +7,27 @@
 
   <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/png" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Site CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
 <body id="top">
-
-  <!-- Scroll Progress Bar -->
   <div id="scroll-progress"></div>
 
-  <!-- Navigation -->
   <nav>
     <a href="{{ '/#top' | relative_url }}">Home</a>
-    <a href="{{ '/#about' | relative_url }}">About</a>
-    <a href="{{ '/#interests' | relative_url }}">Interests</a>
+    <a href="{{ '/#profile' | relative_url }}">Profile</a>
     <a href="{{ '/#contact' | relative_url }}">Contact</a>
     <a href="{{ '/blurbs/' | relative_url }}">Blurbs</a>
   </nav>
 
-  <!-- Page Content -->
   <main>
     {{ content }}
   </main>
 
-  <!-- Scripts -->
   <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-
 </body>
 </html>
