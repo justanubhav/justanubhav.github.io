@@ -773,7 +773,7 @@ h3 {
 
 .credential-head {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 0.85rem;
@@ -785,6 +785,12 @@ h3 {
   color: #98a6b8;
   font-size: 0.95rem;
   font-weight: 700;
+}
+
+.credential-period {
+  flex-shrink: 0;
+  text-align: right;
+  padding-top: 0.08rem;
 }
 
 .credential-meta-row {
