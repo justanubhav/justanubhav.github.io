@@ -420,13 +420,13 @@ h3 {
 }
 
 .blurb-shell {
-  max-width: 920px;
+  max-width: 760px;
   padding-top: 7.5rem;
 }
 
 .blurb-hero {
-  max-width: 760px;
-  margin: 0 auto 3rem;
+  max-width: 640px;
+  margin: 0 auto 3.6rem;
 }
 
 .blurb-title {
@@ -491,17 +491,17 @@ h3 {
 }
 
 .blurb-featured-strip {
-  max-width: 760px;
-  margin: 0 auto 3.4rem;
+  max-width: 640px;
+  margin: 0 auto 3.8rem;
 }
 
 .featured-strip-list {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.6rem;
 }
 
 .blurb-list {
-  max-width: 760px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -519,7 +519,7 @@ h3 {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.7rem;
 }
 
 .blurb-list-copy {
@@ -530,25 +530,24 @@ h3 {
 
 .post-stream {
   display: grid;
-  gap: 1.8rem;
+  gap: 2.35rem;
 }
 
 .post-card {
   max-width: none;
   margin: 0;
-  padding: 1.55rem 1.6rem;
-  border: 1px solid rgba(255,255,255,0.07);
+  padding: 2rem 1.85rem 2.15rem;
+  border: 0;
   border-radius: 16px;
   background: rgba(17, 17, 18, 0.92);
   text-align: left;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.2);
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 18px 42px rgba(0,0,0,0.26);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .post-card-featured {
-  padding: 1.1rem 1.2rem;
-  background: #121213;
-  opacity: 0.94;
+  padding: 1.65rem 1.6rem 1.75rem;
+  background: rgba(17, 17, 18, 0.94);
 }
 
 .post-card-featured h2 {
@@ -563,8 +562,7 @@ h3 {
 .post-card-stream:hover,
 .post-card-featured:hover {
   transform: translateY(-6px) scale(1.01);
-  border-color: rgba(255,255,255,0.14);
-  box-shadow: 0 22px 48px rgba(0,0,0,0.34);
+  box-shadow: 0 28px 58px rgba(0,0,0,0.38);
 }
 
 .post-card-stream:hover h2 a,
@@ -591,6 +589,11 @@ h3 {
 
 .blurb-card-link {
   display: block;
+}
+
+.post-card-main {
+  display: flex;
+  flex-direction: column;
 }
 
 .post-date {
@@ -626,15 +629,16 @@ h3 {
 
 .post-excerpt {
   max-width: 60ch;
-  margin: 0.85rem 0 0;
+  margin: 1rem 0 0;
   color: var(--muted);
+  line-height: 1.75;
 }
 
 .post-tag-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .post-mini-tag {
