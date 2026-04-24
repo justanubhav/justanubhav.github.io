@@ -9,6 +9,7 @@
   --muted-soft: #7f776f;
   --accent: #d79a5b;
   --accent-orange: #d79a5b;
+  --accent-blue: #88a3c0;
   --accent-olive: #989077;
   --accent-warm: #c9925d;
   --accent-rose: #a97d68;
@@ -122,7 +123,7 @@ section {
 }
 
 .eyebrow {
-  color: var(--accent-orange);
+  color: var(--accent-blue);
 }
 
 .section-kicker {
@@ -332,7 +333,7 @@ h3 {
 .blurb-search-label {
   display: block;
   margin-bottom: 0.55rem;
-  color: var(--accent-olive);
+  color: #8e9eb2;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -462,7 +463,7 @@ h3 {
 
 .post-date {
   margin: 0;
-  color: var(--muted-soft);
+  color: #8f9aaa;
   font-size: 0.83rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
