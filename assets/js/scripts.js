@@ -104,7 +104,7 @@ if (progressBar) {
   const modal = document.getElementById('card-modal');
   const modalTitle = document.getElementById('card-modal-title');
   const modalBody = document.getElementById('card-modal-body');
-  const cardButtons = document.querySelectorAll('.card-button');
+  const cardButtons = document.querySelectorAll('.card-button, .modal-trigger');
   let lastFocusedButton = null;
 
   if (modal && modalTitle && modalBody && cardButtons.length) {
