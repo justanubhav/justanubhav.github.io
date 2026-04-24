@@ -27,7 +27,7 @@ permalink: /blurbs/
 
   {% if pinned_posts.size > 0 %}
     <div class="blurb-featured-strip">
-      <p class="blurb-group-label">Featured</p>
+      <p class="blurb-group-label">Pinned</p>
       <div class="featured-strip-list">
         {% for post in pinned_posts %}
           <article class="post-card post-card-featured pinned"
@@ -39,6 +39,7 @@ permalink: /blurbs/
               <span class="pinned-badge" title="Pinned">Pinned</span>
             </div>
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
             <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
           </article>
         {% endfor %}

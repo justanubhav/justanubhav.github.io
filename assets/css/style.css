@@ -24,7 +24,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   line-height: 1.65;
   text-align: center;
   color: var(--text);
@@ -67,7 +67,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: min(720px, calc(100% - 2rem));
+  width: min(760px, calc(100% - 2rem));
   display: flex;
   justify-content: center;
   gap: 0.35rem;
@@ -122,12 +122,10 @@ section {
   text-transform: uppercase;
 }
 
-.eyebrow {
+.eyebrow,
+.section-kicker,
+.resume-label {
   color: var(--accent-blue);
-}
-
-.section-kicker {
-  color: var(--accent-warm);
 }
 
 .eyebrow::before,
@@ -144,15 +142,16 @@ h2,
 h3,
 .post-card h1,
 .blurb-title {
-  font-family: 'Libre Baskerville', serif;
-  letter-spacing: -0.01em;
+  font-family: 'IBM Plex Sans', sans-serif;
+  letter-spacing: -0.03em;
 }
 
 .hero h1 {
   max-width: 11ch;
   margin: 0 auto;
-  font-size: clamp(3rem, 6vw, 4.9rem);
+  font-size: clamp(3rem, 6vw, 4.6rem);
   line-height: 1.02;
+  font-weight: 600;
 }
 
 .hero-lead {
@@ -206,6 +205,7 @@ h2 {
   margin: 0;
   font-size: clamp(2rem, 3.8vw, 2.8rem);
   line-height: 1.06;
+  font-weight: 600;
 }
 
 .section-copy {
@@ -216,8 +216,9 @@ h2 {
 
 h3 {
   margin: 0 0 0.8rem;
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   color: var(--text);
+  font-weight: 600;
 }
 
 .cards {
@@ -295,6 +296,39 @@ h3 {
   font-size: 0.8rem;
 }
 
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.resume-panel {
+  padding: 1.35rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(18, 18, 19, 0.96), rgba(12, 12, 13, 0.98));
+  text-align: left;
+}
+
+.resume-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resume-meta {
+  margin: 0.2rem 0 0.7rem;
+  color: #98a6b8;
+  font-size: 0.95rem;
+}
+
+.resume-text {
+  margin: 0;
+  color: var(--muted);
+}
+
 .blurb-shell {
   max-width: 920px;
   padding-top: 7.5rem;
@@ -307,9 +341,10 @@ h3 {
 
 .blurb-title {
   margin-top: 0;
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
-  line-height: 0.98;
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+  line-height: 1.02;
   color: var(--text);
+  font-weight: 600;
 }
 
 .blurb-intro {
@@ -344,13 +379,19 @@ h3 {
   width: 100%;
   margin: 0;
   display: block;
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1rem;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: rgba(255,255,255,0.03);
   color: var(--text);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+#blurb-search::placeholder {
+  color: #b3aba2;
+  font-weight: 500;
+  opacity: 1;
 }
 
 #blurb-search:focus {
@@ -361,12 +402,12 @@ h3 {
 
 .blurb-featured-strip {
   max-width: 840px;
-  margin: 0 auto 2.3rem;
+  margin: 0 auto 2.8rem;
 }
 
 .featured-strip-list {
   display: grid;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .blurb-list {
@@ -376,7 +417,7 @@ h3 {
 
 .blurb-group-label {
   margin: 0 0 1rem;
-  color: var(--accent-warm);
+  color: var(--accent-blue);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -388,7 +429,7 @@ h3 {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.35rem;
 }
 
 .blurb-list-copy {
@@ -398,40 +439,36 @@ h3 {
 }
 
 .post-stream {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  display: grid;
+  gap: 1.2rem;
 }
 
 .post-card {
   max-width: none;
   margin: 0;
-  padding: 1.6rem 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(19, 19, 20, 0.96), rgba(13, 13, 14, 0.98));
   text-align: left;
-  transition: transform 0.18s ease, opacity 0.18s ease;
-}
-
-.post-stream .post-card + .post-card {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 
 .post-card-featured {
-  padding: 1.15rem 1.3rem;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(17, 17, 18, 0.92), rgba(12, 12, 13, 0.95));
+  padding: 1.1rem 1.2rem;
+  background: linear-gradient(180deg, rgba(18, 18, 19, 0.94), rgba(12, 12, 13, 0.96));
+  opacity: 0.94;
 }
 
 .post-card-featured h2 {
   margin-top: 0.25rem;
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
 }
 
 .post-card-stream {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem 1.5rem;
+  gap: 1.1rem 1.5rem;
   align-items: end;
 }
 
@@ -441,6 +478,12 @@ h3 {
   white-space: nowrap;
 }
 
+.post-card-stream:hover,
+.post-card-featured:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 154, 91, 0.16);
+}
+
 .post-card-stream:hover h2 a,
 .post-card-featured:hover h2 a {
   color: #f0e8de;
@@ -448,13 +491,15 @@ h3 {
 
 .post-card h1 {
   margin: 0 0 0.75rem;
-  font-size: 2.9rem;
+  font-size: 2.4rem;
   color: var(--text);
+  font-weight: 600;
 }
 
 .post-card h2 {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.55rem;
+  font-weight: 600;
 }
 
 .post-card h2 a:hover {
@@ -494,7 +539,7 @@ h3 {
 
 .post-excerpt {
   max-width: 60ch;
-  margin: 0.75rem 0 0;
+  margin: 0.85rem 0 0;
   color: var(--muted);
 }
 
@@ -543,6 +588,8 @@ h3 {
 
 .post-shell .post-card {
   padding: 2rem 0 0;
+  border: 0;
+  background: transparent;
 }
 
 .post-content {
@@ -580,15 +627,15 @@ h3 {
 }
 
 .contact-email:hover {
-  border-color: rgba(123, 63, 228, 0.34);
-  background: rgba(123, 63, 228, 0.11);
-  color: #d9c6ff;
+  border-color: rgba(123, 63, 228, 0.42);
+  background: rgba(123, 63, 228, 0.18);
+  color: #eadcff;
 }
 
 .contact-instagram:hover {
-  border-color: rgba(228, 64, 95, 0.34);
-  background: linear-gradient(135deg, rgba(131, 58, 180, 0.12), rgba(225, 48, 108, 0.12), rgba(252, 175, 69, 0.12));
-  color: #ffd7e2;
+  border-color: rgba(228, 64, 95, 0.42);
+  background: linear-gradient(135deg, rgba(131, 58, 180, 0.24), rgba(225, 48, 108, 0.24), rgba(252, 175, 69, 0.24));
+  color: #ffe5ec;
 }
 
 .modal {
@@ -632,6 +679,7 @@ h3 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 2rem;
+  font-weight: 600;
 }
 
 .modal-dialog p {
@@ -725,6 +773,10 @@ footer {
 
   .card-wrapper {
     grid-column: span 6;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
   }
 }
 
