@@ -22,55 +22,66 @@ permalink: /blurbs/
     </div>
   </div>
 
-  <div class="blurb-list">
-    {% assign pinned_posts = site.posts | where_exp: "post", "post.pinned == true" %}
-    {% if pinned_posts.size > 0 %}
-      {% for post in pinned_posts %}
-        <div class="post-card pinned"
-             data-title="{{ post.title | downcase | escape }}"
-             data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
-             data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
-          <div class="post-meta-row">
-            <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-            <span class="pinned-badge" title="Pinned">Pinned</span>
-          </div>
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-          {% if post.tags %}
-            <div class="post-tag-row">
-              {% for tag in post.tags limit:3 %}
-                <span class="post-mini-tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
-          <a class="read-more" href="{{ post.url | relative_url }}">Read more</a>
-        </div>
-      {% endfor %}
+  {% assign pinned_posts = site.posts | where_exp: "post", "post.pinned == true" %}
+  {% assign regular_posts = site.posts | where_exp: "post", "post.pinned != true" %}
 
-      <hr class="post-divider">
+  <div class="blurb-layout">
+    {% if pinned_posts.size > 0 %}
+      <div class="blurb-featured">
+        <p class="blurb-group-label">Featured</p>
+        {% for post in pinned_posts %}
+          <article class="post-card post-card-featured pinned"
+                   data-title="{{ post.title | downcase | escape }}"
+                   data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
+                   data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
+            <div class="post-meta-row">
+              <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+              <span class="pinned-badge" title="Pinned">Pinned</span>
+            </div>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+            {% if post.tags %}
+              <div class="post-tag-row">
+                {% for tag in post.tags limit:3 %}
+                  <span class="post-mini-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
+          </article>
+        {% endfor %}
+      </div>
     {% endif %}
 
-    {% assign regular_posts = site.posts | where_exp: "post", "post.pinned != true" %}
-    {% for post in regular_posts %}
-      <div class="post-card"
-           data-title="{{ post.title | downcase | escape }}"
-           data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
-           data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
-        <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-        {% if post.tags %}
-          <div class="post-tag-row">
-            {% for tag in post.tags limit:3 %}
-              <span class="post-mini-tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-        <a class="read-more" href="{{ post.url | relative_url }}">Read more</a>
+    <div class="blurb-list">
+      <div class="blurb-list-header">
+        <p class="blurb-group-label">Archive</p>
+        <p class="blurb-list-copy">Recent notes and essays.</p>
       </div>
-    {% endfor %}
 
-    <hr class="post-divider">
+      <div class="post-stream">
+        {% for post in regular_posts %}
+          <article class="post-card post-card-stream"
+                   data-title="{{ post.title | downcase | escape }}"
+                   data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
+                   data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
+            <div class="post-card-main">
+              <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+              {% if post.tags %}
+                <div class="post-tag-row">
+                  {% for tag in post.tags limit:3 %}
+                    <span class="post-mini-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            <a class="read-more" href="{{ post.url | relative_url }}">Read essay</a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </section>
 

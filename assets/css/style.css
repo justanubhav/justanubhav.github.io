@@ -1,17 +1,17 @@
 :root {
-  --bg: #171210;
-  --bg-elevated: #211916;
+  --bg: #11100f;
+  --bg-elevated: #191614;
   --surface: rgba(255, 255, 255, 0.025);
   --surface-strong: rgba(255, 255, 255, 0.045);
   --border: rgba(255, 255, 255, 0.08);
-  --text: #ebe1d6;
-  --muted: #b7a99a;
-  --muted-soft: #8f8175;
-  --accent: #e0b37c;
-  --accent-orange: #d79a5b;
-  --accent-olive: #a89b7a;
-  --accent-warm: #d4a06a;
-  --accent-rose: #b98c78;
+  --text: #e7dfd4;
+  --muted: #b4a89a;
+  --muted-soft: #877a6e;
+  --accent: #d8a16b;
+  --accent-orange: #cf8f52;
+  --accent-olive: #a39371;
+  --accent-warm: #ca9867;
+  --accent-rose: #a97d68;
 }
 
 html {
@@ -23,15 +23,15 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   line-height: 1.65;
   text-align: center;
   color: var(--text);
   background-color: var(--bg);
   background:
-    radial-gradient(circle at top left, rgba(224, 179, 124, 0.13), transparent 24%),
-    radial-gradient(circle at 82% 8%, rgba(185, 140, 120, 0.09), transparent 22%),
-    linear-gradient(180deg, #201815 0%, #181311 52%, #140f0d 100%);
+    radial-gradient(circle at top left, rgba(207, 143, 82, 0.08), transparent 22%),
+    radial-gradient(circle at 86% 8%, rgba(169, 125, 104, 0.05), transparent 18%),
+    linear-gradient(180deg, #181513 0%, #131110 54%, #100f0e 100%);
 }
 
 body::before {
@@ -143,15 +143,15 @@ h2,
 h3,
 .post-card h1,
 .blurb-title {
-  font-family: 'Sora', sans-serif;
-  letter-spacing: -0.03em;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: -0.01em;
 }
 
 .hero h1 {
   max-width: 11ch;
   margin: 0 auto;
-  font-size: clamp(2.8rem, 6vw, 4.6rem);
-  line-height: 1.08;
+  font-size: clamp(3rem, 6vw, 4.9rem);
+  line-height: 1.02;
 }
 
 .hero-lead {
@@ -203,19 +203,19 @@ section {
 
 h2 {
   margin: 0;
-  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-  line-height: 1.15;
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  line-height: 1.06;
 }
 
 .section-copy {
   margin: 0.7rem auto 0;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
 
 h3 {
   margin: 0 0 0.8rem;
-  font-size: 1.35rem;
+  font-size: 1.7rem;
   color: var(--text);
 }
 
@@ -295,25 +295,22 @@ h3 {
 }
 
 .blurb-shell {
-  max-width: 980px;
+  max-width: 1100px;
   padding-top: 7.5rem;
 }
 
 .blurb-hero {
-  max-width: 720px;
-  margin: 0 auto 2.4rem;
-  padding: 2rem 1.6rem 1.8rem;
-  border: 1px solid rgba(224, 179, 124, 0.12);
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at top, rgba(224, 179, 124, 0.09), transparent 54%),
-    linear-gradient(180deg, rgba(39, 29, 24, 0.9), rgba(26, 20, 17, 0.9));
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .blurb-title {
   margin-top: 0;
-  font-size: clamp(2.1rem, 5vw, 3.1rem);
-  line-height: 1.08;
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  line-height: 0.98;
   color: var(--text);
 }
 
@@ -325,12 +322,12 @@ h3 {
 }
 
 .blurb-toolbar {
-  margin-top: 1.6rem;
+  margin-top: 2rem;
 }
 
 .blurb-search-wrap {
   display: block;
-  max-width: 520px;
+  max-width: 560px;
   margin: 0 auto;
   text-align: left;
 }
@@ -364,9 +361,43 @@ h3 {
   background: rgba(255,255,255,0.04);
 }
 
+.blurb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.blurb-featured,
 .blurb-list {
-  max-width: 760px;
-  margin: 2rem auto;
+  min-width: 0;
+}
+
+.blurb-group-label {
+  margin: 0 0 1rem;
+  color: var(--accent-warm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.blurb-list-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blurb-list-copy {
+  margin: 0;
+  color: var(--muted-soft);
+  font-size: 0.95rem;
+}
+
+.post-stream {
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .post-divider {
@@ -376,31 +407,60 @@ h3 {
 }
 
 .post-card {
-  max-width: 760px;
-  margin: 0 auto 1rem;
-  padding: 1.5rem 1.55rem;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: rgba(31, 24, 20, 0.82);
+  max-width: none;
+  margin: 0;
+  padding: 1.6rem 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   text-align: left;
-  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+  transition: transform 0.18s ease, opacity 0.18s ease;
 }
 
-.blurb-list .post-card:hover {
-  transform: translateY(-1px);
-  border-color: rgba(224, 179, 124, 0.18);
-  background: rgba(38, 29, 24, 0.92);
+.post-card + .post-card {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.post-card-featured {
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(207, 143, 82, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(32, 25, 21, 0.94), rgba(20, 18, 16, 0.96));
+}
+
+.post-card-featured h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.post-card-stream {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: end;
+}
+
+.post-card-stream .read-more {
+  align-self: center;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.post-card-stream:hover h2 a,
+.post-card-featured:hover h2 a {
+  color: #f0e8de;
 }
 
 .post-card h1 {
   margin: 0 0 0.75rem;
-  font-size: 2.25rem;
+  font-size: 2.9rem;
   color: var(--text);
 }
 
 .post-card h2 {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 2rem;
 }
 
 .post-card h2 a:hover {
@@ -441,6 +501,7 @@ h3 {
 .post-excerpt {
   margin: 0.75rem 0 0;
   color: var(--muted);
+  max-width: 60ch;
 }
 
 .post-tag-row {
@@ -486,8 +547,13 @@ h3 {
   padding-top: 7.5rem;
 }
 
+.post-shell .post-card {
+  padding: 2rem 0 0;
+}
+
 .post-content {
   color: #d7d7d7;
+  font-size: 1.06rem;
 }
 
 .post-content p,
@@ -654,6 +720,10 @@ footer {
   .card-wrapper {
     grid-column: span 6;
   }
+
+  .blurb-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -681,7 +751,7 @@ footer {
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero-actions,
@@ -703,9 +773,26 @@ footer {
   }
 
   .contact,
-  .modal-dialog,
-  .post-card {
+  .modal-dialog {
     padding: 1.5rem;
+  }
+
+  .post-card-featured {
+    padding: 1.5rem;
+  }
+
+  .post-card-stream {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .post-card-stream .read-more {
+    margin-top: 0.9rem;
+  }
+
+  .blurb-list-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .post-meta-row {
