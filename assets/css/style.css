@@ -756,6 +756,8 @@ h3 {
 
 .credential-card h3 {
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .credential-card-placeholder {
@@ -784,6 +786,24 @@ h3 {
   margin: 0;
   color: #98a6b8;
   font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.credential-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.1rem;
+  margin-bottom: 0.95rem;
+}
+
+.credential-meta-item {
+  margin: 0;
+  color: #aab8c8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .credential-card-split {
