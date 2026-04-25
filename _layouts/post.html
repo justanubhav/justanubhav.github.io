@@ -3,18 +3,24 @@ layout: default
 ---
 
 <section class="post-shell">
-  <div class="post-card">
-    <h1>{{ page.title }}</h1>
-    <p class="post-date">
-      {{ page.date | date: "%B %-d, %Y" }}
-      {% if page.pinned %}
-        <span class="pinned-badge" title="Pinned">Pinned</span>
-      {% endif %}
-    </p>
-    <div class="post-content">
-      {{ content }}
+  <article class="post-article">
+    <header class="post-header">
+      <p class="section-kicker">Blurb</p>
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta-bar">
+        <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+        {% if page.pinned %}
+          <span class="pinned-badge" title="Pinned">Pinned</span>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="post-body-panel">
+      <div class="post-content">
+        {{ content }}
+      </div>
     </div>
-  </div>
+  </article>
 </section>
 
 <script src="https://utteranc.es/client.js"

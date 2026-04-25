@@ -689,46 +689,114 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 7.5rem;
+  padding: 7.5rem 1rem 4rem;
 }
 
-.post-shell .post-card {
-  max-width: 1120px;
+.post-article {
+  width: min(1040px, 100%);
+  min-height: calc(100vh - 11.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.8rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.post-header {
+  max-width: 760px;
   margin: 0 auto;
-  padding: 2rem 2rem 0;
-  border: 0;
-  background: transparent;
   text-align: center;
+}
+
+.post-header h1 {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.post-meta-bar {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.02);
+}
+
+.post-body-panel {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 2rem 2.2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  background: rgba(17, 17, 18, 0.88);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.24);
+}
+
+.post-body-panel,
+.post-body-panel * {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-content {
   color: #d7d7d7;
-  max-width: 84ch;
-  font-size: 1.08rem;
-  line-height: 1.8;
+  max-width: 86ch;
   margin: 0 auto;
-  text-align: center;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.84;
+  text-align: left;
+}
+
+.post-content > :first-child {
+  margin-top: 0;
 }
 
 .post-content p,
 .post-content li {
-  color: #c8c8c8;
+  color: #ccd2d9;
 }
 
-.post-date,
 .post-content h2,
-.post-content h3,
-.post-content blockquote,
-.post-content ul,
-.post-content ol {
+.post-content h3 {
+  color: var(--text);
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-content h2,
 .post-content h3 {
   margin-top: 2rem;
+}
+
+.post-content h2 {
+  font-size: 1.65rem;
+}
+
+.post-content h3 {
+  font-size: 1.3rem;
+}
+
+.post-content a {
+  color: #d7e3f0;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.post-content blockquote {
+  margin: 1.6rem 0;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 2px solid rgba(136, 163, 192, 0.42);
+  color: #d6dde6;
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: 1.35rem;
 }
 
 .contact {
@@ -1045,6 +1113,16 @@ footer {
     padding-inline: 1.1rem;
   }
 
+  .post-article {
+    min-height: auto;
+    width: 100%;
+  }
+
+  .post-body-panel {
+    width: 100%;
+    padding: 1.5rem 1.45rem;
+  }
+
   .post-content {
     max-width: 100%;
   }
@@ -1278,17 +1356,28 @@ footer {
     font-size: clamp(1.9rem, 8.8vw, 2.35rem);
   }
 
+  .post-header h1 {
+    font-size: clamp(2.1rem, 9vw, 3rem);
+  }
+
   .post-card h2 {
     font-size: 1.12rem;
   }
 
   .post-shell {
     min-height: calc(100vh - 6rem);
-    padding-top: 6rem;
+    padding: 6rem 0.65rem 2.5rem;
   }
 
-  .post-shell .post-card {
-    padding: 1rem 0.35rem 0;
+  .post-meta-bar {
+    width: 100%;
+    border-radius: 16px;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .post-body-panel {
+    padding: 1.15rem 1rem;
+    border-radius: 16px;
   }
 
   .post-content {
