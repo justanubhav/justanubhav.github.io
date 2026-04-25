@@ -1009,9 +1009,10 @@ footer {
 @media (max-width: 980px) {
   .hero {
     min-height: auto;
-    padding-top: 7.5rem;
+    padding-top: 6.8rem;
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 1.6rem;
   }
 
   .card-wrapper {
@@ -1024,12 +1025,13 @@ footer {
 
   .featured-strip-list,
   .post-stream {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .blurb-toolbar-shell,
   .blurb-panel {
     max-width: 100%;
+    padding: 1.15rem;
   }
 
   .hero-media {
@@ -1061,7 +1063,7 @@ footer {
 
   .post-shell .post-card {
     max-width: 100%;
-    padding-inline: 1rem;
+    padding-inline: 1.1rem;
   }
 
   .post-content {
@@ -1080,7 +1082,7 @@ footer {
 
 @media (max-width: 720px) {
   main {
-    padding-inline: 0.75rem;
+    padding-inline: 0.55rem;
   }
 
   .hero-copy,
@@ -1169,18 +1171,18 @@ footer {
   }
 
   .hero {
-    padding-inline: 0.25rem;
-    gap: 1.4rem;
+    padding: 6rem 0.2rem 1.5rem;
+    gap: 1.05rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.4rem, 11vw, 3.8rem);
+    font-size: clamp(2.25rem, 9.6vw, 3.2rem);
   }
 
   .hero-portrait {
-    width: min(280px, 82vw);
-    padding: 0.7rem;
-    border-radius: 18px;
+    width: min(240px, 68vw);
+    padding: 0.55rem;
+    border-radius: 16px;
   }
 
   .hero-lead,
@@ -1189,12 +1191,32 @@ footer {
     margin-right: auto;
   }
 
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-lead {
+    max-width: 34ch;
+    margin-top: 0.75rem;
+    font-size: 0.96rem;
+  }
+
   .hero-actions {
     justify-content: center;
+    gap: 0.55rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 1.2rem 0.35rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.3rem;
   }
 
   .hero-actions,
@@ -1212,22 +1234,23 @@ footer {
   }
 
   .card {
-    min-height: 210px;
+    min-height: 190px;
+    padding: 1.05rem;
   }
 
   .contact,
   .modal-dialog {
-    padding: 1.5rem;
+    padding: 1.1rem;
   }
 
   .resume-panel,
   .credential-card {
-    padding: 1.15rem;
+    padding: 1rem;
   }
 
   .post-card,
   .post-card-featured {
-    padding: 1.25rem 1.05rem 1.35rem;
+    padding: 1rem 0.95rem 1.1rem;
   }
 
   .credential-meta-row {
@@ -1237,29 +1260,29 @@ footer {
 
   .blurb-toolbar-shell,
   .blurb-panel {
-    padding: 1rem;
+    padding: 0.9rem;
   }
 
   .blurb-title,
   .post-card h1 {
-    font-size: clamp(2rem, 10vw, 2.6rem);
+    font-size: clamp(1.9rem, 8.8vw, 2.35rem);
   }
 
   .post-card h2 {
-    font-size: 1.3rem;
+    font-size: 1.12rem;
   }
 
   .post-shell {
-    padding-top: 7rem;
+    padding-top: 6rem;
   }
 
   .post-shell .post-card {
-    padding: 1.25rem 0.65rem 0;
+    padding: 1rem 0.35rem 0;
   }
 
   .post-content {
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: 0.97rem;
+    line-height: 1.72;
   }
 
   .blurb-shell,
@@ -1272,6 +1295,16 @@ footer {
 
   .blurb-search-wrap {
     max-width: 100%;
+  }
+
+  .featured-strip-list,
+  .post-stream {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .blurb-list-header {
+    margin-bottom: 1rem;
   }
 
   .blurb-list-header {
