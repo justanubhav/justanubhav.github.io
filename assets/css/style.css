@@ -15,6 +15,12 @@
   --accent-rose: #a97d68;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
@@ -61,6 +67,15 @@ a {
 
 p {
   text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3,
+a,
+span {
+  overflow-wrap: anywhere;
 }
 
 .site-nav-shell {
@@ -1175,6 +1190,14 @@ footer {
     gap: 1.05rem;
   }
 
+  .card,
+  .resume-panel,
+  .credential-card,
+  .post-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .hero h1 {
     font-size: clamp(2.25rem, 9.6vw, 3.2rem);
   }
@@ -1217,6 +1240,27 @@ footer {
 
   .section-heading {
     margin-bottom: 1.3rem;
+  }
+
+  .card,
+  .resume-panel,
+  .resume-content,
+  .resume-meta,
+  .resume-text,
+  .credential-card,
+  .credential-head,
+  .credential-subtitle,
+  .credential-period,
+  .credential-meta-row,
+  .credential-meta-item,
+  .detail-text {
+    text-align: center;
+  }
+
+  .credential-head,
+  .credential-meta-row {
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-actions,
