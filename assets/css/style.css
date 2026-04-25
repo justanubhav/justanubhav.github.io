@@ -747,18 +747,6 @@ h3 {
   flex-wrap: wrap;
 }
 
-.contact-email:hover {
-  border-color: rgba(123, 63, 228, 0.42);
-  background: rgba(123, 63, 228, 0.18);
-  color: #eadcff;
-}
-
-.contact-instagram:hover {
-  border-color: rgba(228, 64, 95, 0.42);
-  background: linear-gradient(135deg, rgba(131, 58, 180, 0.24), rgba(225, 48, 108, 0.24), rgba(252, 175, 69, 0.24));
-  color: #ffe5ec;
-}
-
 .detail-shell {
   max-width: 980px;
   padding-top: 7.5rem;
