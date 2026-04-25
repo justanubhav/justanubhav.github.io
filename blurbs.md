@@ -17,7 +17,7 @@ permalink: /blurbs/
       <input
         type="text"
         id="blurb-search"
-        placeholder="Search posts, tags, or themes..."
+        placeholder="Search posts or themes..."
       />
     </label>
   </div>
@@ -35,8 +35,7 @@ permalink: /blurbs/
         {% for post in pinned_posts %}
           <article class="post-card post-card-featured pinned"
                    data-title="{{ post.title | downcase | escape }}"
-                   data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
-                   data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
+                   data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}">
             <a class="blurb-card-link" href="{{ post.url | relative_url }}">
               <div class="post-meta-row">
                 <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
@@ -61,20 +60,12 @@ permalink: /blurbs/
       {% for post in regular_posts %}
         <article class="post-card post-card-stream"
                  data-title="{{ post.title | downcase | escape }}"
-                 data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}"
-                 data-tags="{{ post.tags | join: ' ' | downcase | escape }}">
+                 data-excerpt="{{ post.excerpt | strip_html | downcase | escape }}">
           <a class="blurb-card-link" href="{{ post.url | relative_url }}">
             <div class="post-card-main">
               <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
               <h2>{{ post.title }}</h2>
               <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-              {% if post.tags %}
-                <div class="post-tag-row">
-                  {% for tag in post.tags limit:3 %}
-                    <span class="post-mini-tag">{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
             </div>
           </a>
         </article>
@@ -93,8 +84,7 @@ permalink: /blurbs/
     posts.forEach(post => {
       const title = post.dataset.title || '';
       const excerpt = post.dataset.excerpt || '';
-      const tags = post.dataset.tags || '';
-      const match = q === '' || title.includes(q) || excerpt.includes(q) || tags.includes(q);
+      const match = q === '' || title.includes(q) || excerpt.includes(q);
       post.style.display = match ? '' : 'none';
     });
   }

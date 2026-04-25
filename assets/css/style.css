@@ -667,25 +667,6 @@ h3 {
   overflow: hidden;
 }
 
-.post-tag-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: auto;
-  padding-top: 1.25rem;
-}
-
-.post-mini-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.5rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  color: #bfd0e2;
-  font-size: 0.74rem;
-  letter-spacing: 0.03em;
-}
-
 .post-card a {
   color: #d8d8d8;
 }
@@ -725,11 +706,6 @@ h3 {
 .post-content h2,
 .post-content h3 {
   margin-top: 2rem;
-}
-
-.post-tags {
-  margin-top: 1.8rem;
-  text-align: center;
 }
 
 .contact {
@@ -975,29 +951,6 @@ footer {
   text-align: center;
   color: var(--muted-soft);
 }
-
-.post-tags .tag {
-  display: inline-block;
-  padding: 0.3em 0.72em;
-  margin: 0.15em;
-  border-radius: 9999px;
-  color: #fff;
-  font-size: 0.82em;
-  font-weight: 600;
-  transition: transform 0.15s ease;
-}
-
-.post-tags .tag:hover {
-  transform: scale(1.05);
-}
-
-.tag-personal { background: #5f83ab; }
-.tag-politics { background: #6f86a4; }
-.tag-philosophy { background: #4d7597; }
-.tag-religion { background: #718eaf; }
-.tag-review { background: #647f9e; }
-.tag-technology { background: #57779b; }
-.tag-experimental { background: #6b7f98; }
 
 #scroll-progress {
   position: fixed;

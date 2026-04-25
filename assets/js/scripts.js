@@ -106,9 +106,8 @@ if (progressBar) {
       posts.forEach(post => {
         const title = (post.dataset.title || '').toLowerCase();
         const excerpt = (post.dataset.excerpt || '').toLowerCase();
-        const tags = (post.dataset.tags || '').toLowerCase();
 
-        const show = !q || title.includes(q) || excerpt.includes(q) || tags.includes(q);
+        const show = !q || title.includes(q) || excerpt.includes(q);
 
         post.style.display = show ? '' : 'none';
 
