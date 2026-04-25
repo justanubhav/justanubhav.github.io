@@ -439,6 +439,7 @@ h3 {
 .blurb-shell {
   max-width: 1180px;
   padding-top: 7.5rem;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .blurb-heading {
@@ -452,6 +453,7 @@ h3 {
   line-height: 1.02;
   color: var(--text);
   font-weight: 600;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .blurb-intro {
@@ -490,6 +492,7 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #blurb-search {
@@ -503,6 +506,7 @@ h3 {
   color: var(--text);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #blurb-search::placeholder {
@@ -538,6 +542,7 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .blurb-list-header {
@@ -571,6 +576,7 @@ h3 {
   text-align: left;
   box-shadow: 0 14px 34px rgba(0,0,0,0.24);
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-card-featured {
@@ -631,6 +637,7 @@ h3 {
   font-size: 0.83rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-meta-row {
@@ -654,6 +661,7 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-excerpt {
@@ -691,6 +699,7 @@ h3 {
   border: 0;
   background: transparent;
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-content {
@@ -700,11 +709,21 @@ h3 {
   line-height: 1.8;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-content p,
 .post-content li {
   color: #c8c8c8;
+}
+
+.post-date,
+.post-content h2,
+.post-content h3,
+.post-content blockquote,
+.post-content ul,
+.post-content ol {
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .post-content h2,
