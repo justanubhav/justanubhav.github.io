@@ -31,7 +31,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.65;
   text-align: center;
   color: var(--text);
@@ -173,7 +173,7 @@ h2,
 h3,
 .post-card h1,
 .blurb-title {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: -0.03em;
 }
 
@@ -677,6 +677,10 @@ h3 {
 
 .post-shell {
   max-width: 1280px;
+  min-height: calc(100vh - 7.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 7.5rem;
 }
 
@@ -1260,6 +1264,7 @@ footer {
   }
 
   .post-shell {
+    min-height: calc(100vh - 6rem);
     padding-top: 6rem;
   }
 
