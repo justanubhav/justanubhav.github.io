@@ -57,22 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
   // --------------------------
-  // Featured blurb click
-  // --------------------------
-  const blurbs = ["/blurbs/"];
-
-  const featuredBlurb = document.getElementById('featured-blurb');
-
-  if (featuredBlurb) {
-    featuredBlurb.style.cursor = "pointer";
-
-    featuredBlurb.addEventListener('click', () => {
-      const randomBlurb = blurbs[Math.floor(Math.random() * blurbs.length)];
-      window.location.href = randomBlurb;
-    });
-  }
-
-  // --------------------------
   // Scroll Progress Bar
   // --------------------------
   
@@ -92,45 +76,6 @@ if (progressBar) {
     progressBar.style.width = scrollPercent + '%';
   });
 }
-
-  // --------------------------
-  // Blurb search
-  // --------------------------
-  const searchInput = document.getElementById('blurb-search');
-  const posts = Array.from(document.querySelectorAll('.post-card'));
-
-  if (searchInput) {
-    function filterPosts() {
-      const q = searchInput.value.toLowerCase().trim();
-
-      posts.forEach(post => {
-        const title = (post.dataset.title || '').toLowerCase();
-        const excerpt = (post.dataset.excerpt || '').toLowerCase();
-
-        const show = !q || title.includes(q) || excerpt.includes(q);
-
-        post.style.display = show ? '' : 'none';
-
-        const hr = post.nextElementSibling;
-        if (hr && hr.classList.contains('post-divider')) {
-          hr.style.display = show ? '' : 'none';
-        }
-      });
-    }
-
-    searchInput.addEventListener('input', filterPosts);
-
-    document.addEventListener('keydown', e => {
-      if (
-        e.key === '/' &&
-        !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)
-      ) {
-        e.preventDefault();
-        searchInput.focus();
-        searchInput.select();
-      }
-    });
-  }
 
   // --------------------------
   // Card modal
