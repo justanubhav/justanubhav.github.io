@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // --------------------------
   // Mobile navigation
@@ -39,22 +40,86 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fade-in on scroll
   // --------------------------
   const faders = document.querySelectorAll('.fade-in');
+  const typingElements = document.querySelectorAll('[data-type-text]');
+
+  function typeText(element) {
+    if (!element || element.dataset.typed === 'true') return;
+
+    const text = element.dataset.typeText || element.textContent.trim();
+    element.dataset.typed = 'true';
+
+    if (prefersReducedMotion) {
+      element.textContent = text;
+      element.classList.add('typed');
+      return;
+    }
+
+    element.textContent = '';
+    element.classList.add('is-typing');
+
+    let index = 0;
+    const speed = Math.max(18, Math.min(42, 680 / Math.max(text.length, 1)));
+
+    function tick() {
+      element.textContent = text.slice(0, index + 1);
+      index += 1;
+
+      if (index < text.length) {
+        window.setTimeout(tick, speed);
+      } else {
+        element.classList.remove('is-typing');
+        element.classList.add('typed');
+      }
+    }
+
+    window.setTimeout(tick, 80);
+  }
+
+  function typeInside(container) {
+    if (!container) return;
+
+    if (container.matches && container.matches('[data-type-text]')) {
+      typeText(container);
+    }
+
+    container.querySelectorAll('[data-type-text]').forEach(typeText);
+  }
 
   if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          typeInside(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(el => observer.observe(el));
+
+    const typingObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          typeText(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    typingElements.forEach(el => {
+      if (!el.closest('.fade-in')) {
+        typingObserver.observe(el);
       }
     });
-  }, { threshold: 0.2 });
-
-  faders.forEach(el => observer.observe(el));
   } else {
-  // fallback for older browsers
-  faders.forEach(el => el.classList.add('visible'));
-}
+    // fallback for older browsers
+    faders.forEach(el => {
+      el.classList.add('visible');
+      typeInside(el);
+    });
+    typingElements.forEach(typeText);
+  }
 
   // --------------------------
   // Scroll Progress Bar

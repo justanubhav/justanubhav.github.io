@@ -7,82 +7,233 @@
 
   <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Site CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="92b1efdb-0119-4dfd-8d57-97fee998936e"></script>
 </head>
+
 <body id="top">
-  <!-- Scroll Progress Bar -->
   <div id="scroll-progress"></div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="/#top">Home</a>
-    <a href="/#about">About</a>
-    <a href="/#interests">Interests</a>
-    <a href="/#contact">Contact</a>
-    <a href="/blurbs/">Blurbs</a>
-    <button id="theme-toggle">☀️</button>
-  </nav>
+  <div class="site-nav-shell">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <button id="mobile-theme-toggle" title="Toggle theme">🌓</button>
+    <nav id="site-nav">
+      <a href="/#top">Home</a>
+      <a href="/#profile">Profile</a>
+      <a href="/#resume">Resume</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
 
-  <!-- Page Content -->
   <main>
-    <header class="fade-in">
-  <h1>Hello, I'm Anubhav Roy.</h1>
-  <p>Terrifyingly handsome. Extraordinarily intelligent. Exceptionally humble.</p>
-<section id="featured-blurb" class="fade-in hero-feature">
-  <p>Interested in my borderline psychotic reflections? Click here to go to a random blurb!</p>
-</section>
-</header>
+    <header class="hero fade-in">
+  <div class="hero-copy">
+    <p class="eyebrow"><span data-type-text="About Me">About Me</span></p>
+    <h1><span data-type-text="Anubhav Roy">Anubhav Roy</span></h1>
+    <p class="hero-subtitle"><span data-type-text="Business student, hobbyist Nak Muay, armchair philosopher.">Business student, hobbyist Nak Muay, armchair philosopher.</span></p>
+    <p class="hero-lead">Interested in communication, strategy, technology, and the ideas that shape how people think.</p>
+    <div class="hero-actions">
+      <a class="secondary-action" href="#profile">View profile</a>
+      <a class="secondary-action" href="https://anubhav.lovestoblog.com/" target="_blank" rel="noopener noreferrer">Read blogs</a>
+    </div>
+  </div>
 
-<section id="about" class="fade-in">
-  <h2>About Me</h2>
-  <div class="cards">
-    <div class="card-wrapper fade-in">
-      <div class="card">
-        <p>I'm a business administration student at iLEAD Kolkata. My attendance must be in the negative at this point, though.</p>
+  <div class="hero-media" aria-hidden="true">
+    <div class="hero-portrait">
+      <div class="hero-portrait-inner">
+        <img
+          class="hero-portrait-image"
+          src="/assets/images/professional_shot.png"
+          alt="Professional portrait of Anubhav Roy"
+        />
       </div>
     </div>
+  </div>
+</header>
+
+<section id="profile" class="fade-in">
+  <div class="section-heading">
+    <p class="section-kicker"><span data-type-text="Profile">Profile</span></p>
+    <h2><span data-type-text="A brief overview.">A brief overview.</span></h2>
+    <p class="section-copy">What am I like?</p>
+  </div>
+
+  <div class="cards">
     <div class="card-wrapper fade-in">
-      <div class="card">
-        <p>I spend my free time at the gym, watching films or TV, reading about history or anthropology, following online discussions, and smoking more than I should. I enjoy exploring a variety of topics.</p>
-      </div>
+      <button
+        class="card card-button"
+        type="button"
+        data-modal-title="Execution and Ownership"
+        data-modal-body="I operate best in execution-heavy environments where outcomes matter more than theory. I prefer building, improving, and moving work forward rather than staying in abstraction. My focus is on clarity, speed of execution, and taking ownership of tasks end-to-end. I am currently studying business administration at iLEAD Kolkata, but my orientation is practical rather than academic."
+      >
+        <span class="card-label" data-type-text="Core">Core</span>
+        <h3>Execution & Ownership</h3>
+        <p>Execution-first mindset, prefers building over theory.</p>
+      </button>
+    </div>
+
+    <div class="card-wrapper fade-in">
+      <button
+        class="card card-button"
+        type="button"
+        data-modal-title="Communication and Sales Ability"
+        data-modal-body="I work in sales and operate comfortably in client-facing environments. My communication style is direct, structured, and confident. I adapt tone depending on context and am comfortable handling persuasion, negotiation, and outreach. I speak assertively in English and prioritize clarity over embellishment."
+      >
+        <span class="card-label" data-type-text="Influence">Influence</span>
+        <h3>Communication & Sales</h3>
+        <p>Client-facing, persuasive, structured communicator.</p>
+      </button>
+    </div>
+
+    <div class="card-wrapper fade-in">
+      <button
+        class="card card-button"
+        type="button"
+        data-modal-title="Technical & Strategic Thinking"
+        data-modal-body="I am comfortable with technology and adapt quickly to new tools, especially AI systems. My interest is not just in technology itself, but in how it creates leverage in business contexts. I am drawn to roles involving strategy, business development, and structured problem-solving where tools and thinking combine to produce outcomes."
+      >
+        <span class="card-label" data-type-text="Capability">Capability</span>
+        <h3>Tech & Strategy</h3>
+        <p>Fast with tools, strong with AI, oriented toward leverage.</p>
+      </button>
+    </div>
+
+    <div class="card-wrapper fade-in">
+      <button
+        class="card card-button"
+        type="button"
+        data-modal-title="Curiosity in Philosophy, History, and Theology"
+        data-modal-body="I spend a significant amount of time exploring philosophy, theology, history, and anthropology. I am interested in how humans construct meaning, belief systems, and institutions across time. I prefer understanding ideas deeply rather than superficially, and I often connect concepts across disciplines."
+      >
+        <span class="card-label" data-type-text="Intellectual">Intellectual</span>
+        <h3>Ideas & Humanities</h3>
+        <p>Philosophy, theology, history, critical thinking.</p>
+      </button>
+    </div>
+
+    <div class="card-wrapper fade-in">
+      <button
+        class="card card-button"
+        type="button"
+        data-modal-title="Physical Discipline and Pressure Handling"
+        data-modal-body="I train in Muay Thai and use it as a discipline anchor. It builds composure, timing, and controlled aggression under pressure. The training carries over into professional situations where staying calm and precise under stress matters more than emotional intensity."
+      >
+        <span class="card-label" data-type-text="Discipline">Discipline</span>
+        <h3>Muay Thai Training</h3>
+        <p>Physical discipline, pressure control, composure.</p>
+      </button>
+    </div>
+
+    <div class="card-wrapper fade-in">
+      <button
+        class="card card-button"
+        type="button"
+        data-modal-title="Curiosity and Cognitive Style"
+        data-modal-body="I naturally observe patterns in culture, behavior, and online discourse. I tend to break down ideas into structure rather than consuming them passively. I also experiment occasionally with ideas when they seem worth testing. My thinking style is practical, analytical, and oriented toward clarity rather than complexity."
+      >
+        <span class="card-label" data-type-text="Thinking">Thinking</span>
+        <h3>Observation & Analysis</h3>
+        <p>Pattern recognition, structured thinking, practical curiosity.</p>
+      </button>
     </div>
   </div>
 </section>
 
-<section id="interests" class="fade-in">
-  <h2>Interests</h2>
-  <div class="cards">
-    <div class="card-wrapper fade-in">
-      <div class="card">
-        <p>I am very passionate about avoiding work and inviting trouble into my life. You should try it sometime.</p>
+<section id="resume" class="fade-in">
+  <div class="section-heading">
+    <p class="section-kicker"><span data-type-text="Resume">Resume</span></p>
+    <h2><span data-type-text="Professional snapshot.">Professional snapshot.</span></h2>
+    <p class="section-copy">A concise view of education, work orientation, and current focus.</p>
+  </div>
+
+  <div class="resume-grid">
+    <a
+      class="resume-panel"
+      href="/education/"
+      aria-label="Open education page"
+    >
+      <p class="resume-label">Education</p>
+      <div class="resume-content">
+        <h3>Business Administration</h3>
+        <p class="resume-meta">iLEAD Kolkata</p>
       </div>
-    </div>
-    <div class="card-wrapper fade-in">
-      <div class="card">
-        <p>Random thoughts, reflections on culture and politics, and random small experiments every now and then. I prefer keeping things practical and simple.</p>
+      <p class="resume-text">Formal background in business administration with a strong preference for applied work, execution, and practical problem-solving.</p>
+    </a>
+
+    <a
+      class="resume-panel"
+      href="/work-experience/"
+      aria-label="Open work experience page"
+    >
+      <p class="resume-label">Experience</p>
+      <div class="resume-content">
+        <h3>Sales and Client-Facing Work</h3>
+        <p class="resume-meta">Communication, outreach, persuasion</p>
       </div>
-    </div>
+      <p class="resume-text">Comfortable in environments that require structured communication, negotiation, and confidence in front of clients or prospects.</p>
+    </a>
+
+    <a
+      class="resume-panel"
+      href="/personal-experience/"
+      aria-label="Open focus page"
+    >
+      <p class="resume-label">Focus</p>
+      <div class="resume-content">
+        <h3>Strategy, AI, and Business Development</h3>
+        <p class="resume-meta">Execution-first mindset</p>
+      </div>
+      <p class="resume-text">Most interested in work that combines strategy, technology, communication, and leverage to produce practical outcomes.</p>
+    </a>
   </div>
 </section>
 
 <section id="contact" class="fade-in contact">
-  <h2>Contact</h2>
-  <p>If you’d like to reach out:</p>
+  <div class="section-heading">
+    <p class="section-kicker"><span data-type-text="Contact">Contact</span></p>
+    <h2><span data-type-text="Reach out.">Reach out.</span></h2>
+    <p class="section-copy">For work, ideas, or conversation.</p>
+  </div>
   <div class="contact-links">
-    <a href="mailto:anubhav.roy.05@proton.me">Email</a>
-    <a href="https://www.instagram.com/justanubhavv/" target="_blank">Instagram</a>
+    <a class="contact-email" href="mailto:anubhav.roy.05@proton.me">Email</a>
+    <a class="contact-instagram" href="https://www.instagram.com/justanubhavv/" target="_blank">Instagram</a>
+    <a class="contact-linkedin" href="https://www.linkedin.com/in/anubhav-roy-203076290/" target="_blank">LinkedIn</a>
   </div>
 </section>
 
+<div class="modal" id="card-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-modal-close></div>
+  <div
+    class="modal-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="card-modal-title"
+    aria-describedby="card-modal-body"
+  >
+    <button class="modal-close" type="button" aria-label="Close popup" data-modal-close>&times;</button>
+    <p class="modal-kicker">More Detail</p>
+    <h2 id="card-modal-title"></h2>
+    <p id="card-modal-body"></p>
+  </div>
+</div>
+
   </main>
 
-  <!-- Scripts -->
   <script src="/assets/js/scripts.js"></script>
 </body>
 </html>

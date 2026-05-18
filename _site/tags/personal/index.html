@@ -7,29 +7,39 @@
 
   <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Site CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="92b1efdb-0119-4dfd-8d57-97fee998936e"></script>
 </head>
+
 <body id="top">
-  <!-- Scroll Progress Bar -->
   <div id="scroll-progress"></div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="/#top">Home</a>
-    <a href="/#about">About</a>
-    <a href="/#interests">Interests</a>
-    <a href="/#contact">Contact</a>
-    <a href="/blurbs/">Blurbs</a>
-    <button id="theme-toggle">☀️</button>
-  </nav>
+  <div class="site-nav-shell">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <button id="mobile-theme-toggle" title="Toggle theme">🌓</button>
+    <nav id="site-nav">
+      <a href="/#top">Home</a>
+      <a href="/#profile">Profile</a>
+      <a href="/#resume">Resume</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
 
-  <!-- Page Content -->
   <main>
     <div style="padding-top: 5rem;"> <!-- adjust 5rem as needed for your navbar height -->
   <h1>Personal</h1>
@@ -38,30 +48,27 @@
     
       
         <div class="post-card">
-          <h2><a href="/2025/10/05/dnd-with-deepseek.html">I Spend a Whole Lot of Time Worldbuilding So I Decided to Use DeepSeek to Play Dungeons &amp; Dragons With It</a></h2>
-          <p class="post-date">October 05, 2025</p>
-          <p class="post-excerpt">I don’t know how unique I am for this, but one of my favorite activities to do is worldbuilding for no good reason. I never intend to write stories with it (I am, in fact, fascinatingly bad at writing stories, and writing in general, as one can observe from reading my “blurbs”), but I love to spend hours building maps with complex geopolitics and cultures.
-
+          <h2><a href="/2026/03/06/growth.html">On Growth</a></h2>
+          <p class="post-date">March 06, 2026</p>
+          <p class="post-excerpt">I have, over the course of just the past few months, changed very much.
 </p>
-          <a class="read-more" href="/2025/10/05/dnd-with-deepseek.html">Read more</a>
+          <a class="read-more" href="/2026/03/06/growth.html">Read more</a>
         </div>
         <hr class="post-divider" />
-      
-    
-      
-    
       
     
       
         <div class="post-card">
-          <h2><a href="/2025/09/13/my-first-post.html">What is this site, and why did I create it?</a></h2>
-          <p class="post-date">September 13, 2025</p>
-          <p class="post-excerpt">Why, hello there, inquisitive speech bubble. I’m Anubhav. You might see my name in the front page. I made this site mainly because I figure I could use this page to articulate some of the things I think and just because I think it is cool to have an introductory page of yourself even when it is entirely pointless because you have zero things to actually introduce about yourself.
+          <h2><a href="/2026/01/31/on-repentance.html">On Sin</a></h2>
+          <p class="post-date">January 31, 2026</p>
+          <p class="post-excerpt">I am coming to believe that no one can truly be a good person if they have not at first been exposed to their own capacity for wrongdoing. I hope someday to head in that direction, when I can say that I used to be a bad person. When I was, so to speak, “untainted,” or rather, “untested,” I would carry a quiet superiority regarding my own “near perfection” when it came to morality. I believed that I was good because I had not yet been forced to see how easily I would fail. To quote John Steinbeck, “And now that you don’t have to be perfect, you can be good.” I think I am having a much easier time being good upon finding out that not only am I not perfect, if I don’t hold myself back actively at all times, I’m actually a rather horrible person.
 
 </p>
-          <a class="read-more" href="/2025/09/13/my-first-post.html">Read more</a>
+          <a class="read-more" href="/2026/01/31/on-repentance.html">Read more</a>
         </div>
         <hr class="post-divider" />
+      
+    
       
     
   </div>
@@ -69,7 +76,6 @@
 
   </main>
 
-  <!-- Scripts -->
   <script src="/assets/js/scripts.js"></script>
 </body>
 </html>

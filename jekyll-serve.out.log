@@ -1,0 +1,10 @@
+Configuration file: C:/Users/anubh/Documents/justanubhav.github.io/_config.yml
+            Source: C:/Users/anubh/Documents/justanubhav.github.io
+       Destination: C:/Users/anubh/Documents/justanubhav.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
+                    done in 7.24 seconds.
+ Auto-regeneration: disabled. Use --watch to enable.
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.

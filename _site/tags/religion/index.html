@@ -7,29 +7,39 @@
 
   <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Epunda+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Site CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="92b1efdb-0119-4dfd-8d57-97fee998936e"></script>
 </head>
+
 <body id="top">
-  <!-- Scroll Progress Bar -->
   <div id="scroll-progress"></div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="/#top">Home</a>
-    <a href="/#about">About</a>
-    <a href="/#interests">Interests</a>
-    <a href="/#contact">Contact</a>
-    <a href="/blurbs/">Blurbs</a>
-    <button id="theme-toggle">☀️</button>
-  </nav>
+  <div class="site-nav-shell">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <button id="mobile-theme-toggle" title="Toggle theme">🌓</button>
+    <nav id="site-nav">
+      <a href="/#top">Home</a>
+      <a href="/#profile">Profile</a>
+      <a href="/#resume">Resume</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
 
-  <!-- Page Content -->
   <main>
     <div style="padding-top: 5rem;">
   <h1>Religion</h1>
@@ -41,25 +51,12 @@
       
     
       
-        <div class="post-card">
-          <h2><a href="/2025/09/16/morality.html">On the Existence of Morality (or The Lack Thereof)</a></h2>
-          <p class="post-date">September 16, 2025</p>
-          <p class="post-excerpt">As usual, I couldn’t really figure out what to write on the site upon making it. To procrastinate on actually writing something on my site that I made specifically to write in, I atttempted to create a better comment section, since the current one uses Utterances and needs one to log into GitHub; I tried to make an anonymous comment section kind of like 4chan and failed spectacularly and gave up halfway through.
-
-</p>
-          <a class="read-more" href="/2025/09/16/morality.html">Read more</a>
-        </div>
-        <hr class="post-divider" />
-      
-    
-      
     
   </div>
 </div>
 
   </main>
 
-  <!-- Scripts -->
   <script src="/assets/js/scripts.js"></script>
 </body>
 </html>
